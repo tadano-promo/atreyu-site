@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | Atreyu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo-link">
+      <svg class="nav-logo" viewBox="0 0 80 48" fill="none"><path d="M6 38 C16 10 32 6 46 18 C54 24 62 14 70 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M46 18 C50 30 60 34 72 30" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="70" cy="8" r="2.5" fill="currentColor"/></svg>
+      <span class="nav-brand">Atreyu</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-menu" id="nav-menu">
+    <a href="marketing.html" class="nav-item">マーケティング</a>
+    <a href="video.html" class="nav-item">映像制作</a>
+    <a href="https://atreyu-fashion.square.site" target="_blank" class="nav-item">衣類販売 ↗</a>
+    <a href="concept.html" class="nav-item">コンセプト・ルーツ</a>
+    <a href="vision.html" class="nav-item">これから</a>
+    <a href="news.html" class="nav-item">NEWS</a>
+    <a href="contact.html" class="nav-item nav-item--cta">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <span class="page-hero__eyebrow">Contact</span>
+    <h1 class="page-hero__title">お問い合わせ</h1>
+    <p class="page-hero__sub">まずは話を聞いてみるだけでも歓迎です。<br>各種SNSのDMからもお気軽にどうぞ。</p>
+  </section>
+
+  <div class="section">
+
+    <!-- LINE誘導 -->
+    <div class="reveal" style="background:var(--brown-dark);padding:28px;margin-bottom:40px;text-align:center">
+      <p style="font-family:var(--font-serif-en);font-size:11px;letter-spacing:0.3em;color:rgba(240,232,216,0.5);margin-bottom:10px">RECOMMENDED</p>
+      <p style="font-family:var(--font-serif-jp);font-size:18px;color:var(--white);margin-bottom:8px">公式LINEが一番早いです</p>
+      <p style="font-size:12px;color:rgba(240,232,216,0.55);line-height:1.9;margin-bottom:20px">毎月最大30%引きのクーポン発行もあります</p>
+      <a href="https://lin.ee/xxxxx" target="_blank" class="btn btn--primary">公式LINEで相談する</a>
+    </div>
+
+    <!-- フォーム -->
+    <div class="reveal">
+      <p class="section-eyebrow">Form</p>
+      <h2 class="section-title" style="margin-bottom:32px">お問い合わせフォーム</h2>
+
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label class="form-label">お名前<span>*必須</span></label>
+          <input type="text" class="form-input" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">メールアドレス<span>*必須</span></label>
+          <input type="email" class="form-input" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご相談内容<span>*必須</span></label>
+          <select class="form-select" required>
+            <option value="" disabled selected>選択してください</option>
+            <option>マーケティング事業について</option>
+            <option>映像制作事業について</option>
+            <option>衣類販売・アパレルについて</option>
+            <option>プレスリリース・取材について</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">メッセージ<span>*必須</span></label>
+          <textarea class="form-textarea" placeholder="ご相談内容をご自由にお書きください。" required></textarea>
+        </div>
+        <div style="margin-top:8px">
+          <a href="policy.html" style="font-size:12px;color:var(--brown-light);border-bottom:1px solid var(--brown-light)">プライバシーポリシー</a>
+          <span style="font-size:12px;color:var(--text-light)">に同意の上、送信してください。</span>
+        </div>
+        <div style="margin-top:24px">
+          <button type="submit" class="btn btn--primary" style="width:100%;padding:18px">送信する</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo-wrap">
+      <svg class="footer-logo" viewBox="0 0 80 48" fill="none"><path d="M6 38 C16 10 32 6 46 18 C54 24 62 14 70 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M46 18 C50 30 60 34 72 30" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="70" cy="8" r="2.5" fill="currentColor"/></svg>
+      <span class="footer-brand">Atreyu</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="marketing.html">マーケティング</a><a href="video.html">映像制作</a><a href="concept.html">コンセプト</a><a href="vision.html">これから</a><a href="news.html">NEWS</a><a href="policy.html">ポリシー</a>
+    </nav>
+    <p class="footer-copy">©Atreyu 2025</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
