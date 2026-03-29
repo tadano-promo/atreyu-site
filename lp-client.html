@@ -42,10 +42,6 @@
     from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  @keyframes lineExpand {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
-  }
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50%       { transform: translateY(-8px); }
@@ -373,7 +369,7 @@
   .sol-card p { font-size: 0.8rem; color: var(--muted); line-height: 2; }
 
   /* CREDENTIALS */
-  .credentials { background: var(--paper); }
+  .credentials { background: var(--cream); }
   .cred-intro {
     font-size: 0.88rem;
     color: var(--muted);
@@ -389,14 +385,14 @@
     margin-bottom: 2px;
   }
   .cred-card {
-    background: var(--cream);
+    background: var(--paper);
     padding: 36px 28px;
   }
   .cred-card .num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.8rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--ink);
     line-height: 1;
     margin-bottom: 8px;
   }
@@ -406,6 +402,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 10px;
+    color: var(--ink);
   }
   .cred-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.9; }
 
@@ -475,7 +472,7 @@
   }
 
   /* FLOW */
-  .flow { background: var(--cream); }
+  .flow { background: var(--paper); }
   .flow-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -549,7 +546,7 @@
 
   /* FINAL CTA */
   .cta-final {
-    background: var(--paper);
+    background: var(--cream);
     text-align: center;
     padding: 120px 40px;
   }
@@ -595,7 +592,7 @@
   @media (max-width: 768px) {
     header { padding: 16px 20px; }
     .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 120px 28px 60px; }
+    .hero-left { padding: 100px 28px 60px; }
     .hero-left::after { display: none; }
     .hero-right { padding: 60px 28px; }
     .hero-stats { grid-template-columns: 1fr 1fr; }
