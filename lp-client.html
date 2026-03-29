@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>映像制作の依頼 | アトレイユファミリー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f2ec;
+    --cream: #ede8de;
+    --gold: #b8965a;
+    --gold-light: #d4b07a;
+    --rust: #8b3a2a;
+    --muted: #7a7369;
+    --border: rgba(184,150,90,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes lineExpand {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* HEADER */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,242,236,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+  .header-cta {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .header-cta:hover { background: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    background: var(--ink);
+    padding: 140px 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: 0; bottom: 0;
+    width: 60px;
+    background: linear-gradient(to right, var(--ink), transparent);
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-headline {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--paper);
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--gold-light);
+  }
+  .hero-sub {
+    font-size: 0.88rem;
+    color: rgba(245,242,236,0.65);
+    line-height: 2.1;
+    max-width: 400px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--gold);
+    color: var(--ink);
+    text-decoration: none;
+    padding: 18px 36px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: background 0.25s, transform 0.2s;
+    animation: fadeUp 0.8s 0.45s ease both;
+    width: fit-content;
+  }
+  .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .hero-right {
+    background: var(--cream);
+    padding: 140px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .stat-box {
+    background: var(--paper);
+    padding: 28px 24px;
+    border-left: 3px solid var(--gold);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-num span { font-size: 1rem; font-weight: 300; }
+  .stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; line-height: 1.6; }
+  .hero-tagline {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.9;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .hero-tagline strong {
+    display: block;
+    font-size: 0.72rem;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .media-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    animation: fadeUp 0.8s 0.55s ease both;
+  }
+  .badge {
+    font-size: 0.63rem;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    color: var(--muted);
+  }
+
+  /* SECTION BASE */
+  section { padding: 100px 40px; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .divider {
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 40px;
+    transform-origin: left;
+  }
+
+  /* WHAT IS */
+  .whatis { background: var(--paper); }
+  .whatis-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .whatis-text p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 2.2;
+    margin-bottom: 18px;
+  }
+  .whatis-text p strong { color: var(--ink); font-weight: 500; }
+  .whatis-visual {
+    background: var(--ink);
+    padding: 48px 40px;
+    position: relative;
+  }
+  .whatis-visual::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    color: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    line-height: 1;
+  }
+  .philosophy-text {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.05rem;
+    color: var(--paper);
+    line-height: 2.1;
+    position: relative;
+    z-index: 1;
+  }
+  .philosophy-text em {
+    font-style: normal;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+  }
+  .philosophy-sig {
+    margin-top: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: rgba(245,242,236,0.35);
+    text-transform: uppercase;
+  }
+
+  /* PROBLEM */
+  .problem { background: var(--ink); color: var(--paper); }
+  .problem .section-title { color: var(--paper); }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .problem-item {
+    background: rgba(255,255,255,0.04);
+    padding: 36px 32px;
+    border-left: 1px solid rgba(184,150,90,0.3);
+    transition: background 0.2s;
+  }
+  .problem-item:hover { background: rgba(184,150,90,0.08); }
+  .problem-item .icon { font-size: 1.6rem; margin-bottom: 16px; }
+  .problem-item h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+  }
+  .problem-item p { font-size: 0.82rem; color: rgba(245,242,236,0.6); line-height: 1.9; }
+
+  /* SOLUTION */
+  .solution { background: var(--cream); }
+  .solution-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 56px;
+  }
+  .sol-card {
+    background: var(--paper);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .sol-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .sol-card:hover::after { transform: scaleX(1); }
+  .sol-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .sol-card h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .sol-card p { font-size: 0.8rem; color: var(--muted); line-height: 2; }
+
+  /* CREDENTIALS */
+  .credentials { background: var(--paper); }
+  .cred-intro {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 2.2;
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+  .cred-intro strong { color: var(--ink); font-weight: 500; }
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+  .cred-card {
+    background: var(--cream);
+    padding: 36px 28px;
+  }
+  .cred-card .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .cred-card .num sup { font-size: 1rem; }
+  .cred-card h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .cred-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.9; }
+
+  /* PRODUCER STRIP */
+  .producer-strip {
+    background: var(--ink);
+    padding: 56px 48px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 2px;
+  }
+  .producer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .producer-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+  .producer-role {
+    font-size: 0.75rem;
+    color: rgba(245,242,236,0.4);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+  }
+  .producer-bio {
+    font-size: 0.82rem;
+    color: rgba(245,242,236,0.65);
+    line-height: 2.1;
+    border-left: 2px solid var(--gold);
+    padding-left: 24px;
+  }
+  .producer-bio strong { color: var(--gold-light); font-weight: 500; }
+
+  /* MEDIA */
+  .media-section {
+    margin-top: 60px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+  .media-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .media-logos { display: flex; flex-wrap: wrap; }
+  .media-logo {
+    padding: 14px 24px;
+    border: 1px solid var(--border);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin: -1px -1px 0 0;
+  }
+
+  /* FLOW */
+  .flow { background: var(--cream); }
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 60px;
+    position: relative;
+  }
+  .flow-steps::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 10%; right: 10%;
+    height: 1px;
+    background: var(--border);
+  }
+  .flow-step { padding: 0 20px; text-align: center; }
+  .step-num {
+    width: 64px; height: 64px;
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .flow-step h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .flow-step p { font-size: 0.76rem; color: var(--muted); line-height: 1.8; }
+
+  /* FAQ */
+  .faq { background: var(--ink); color: var(--paper); }
+  .faq .section-title { color: var(--paper); }
+  .faq-list { margin-top: 48px; }
+  .faq-item { border-bottom: 1px solid rgba(184,150,90,0.2); overflow: hidden; }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--paper);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 24px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq-icon { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; flex-shrink: 0; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 0.85rem;
+    color: rgba(245,242,236,0.65);
+    line-height: 2;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 24px; }
+
+  /* FINAL CTA */
+  .cta-final {
+    background: var(--paper);
+    text-align: center;
+    padding: 120px 40px;
+  }
+  .cta-final .section-label { margin: 0 auto 16px; }
+  .cta-final .section-title { margin: 0 auto 20px; max-width: 640px; }
+  .cta-final .divider { margin: 0 auto 40px; }
+  .cta-final p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 2.1;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 22px 48px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    transition: background 0.25s, transform 0.2s;
+    animation: float 4s ease-in-out infinite;
+  }
+  .cta-btn:hover { background: var(--gold); color: var(--ink); }
+  .cta-note { margin-top: 20px; font-size: 0.73rem; color: var(--muted); letter-spacing: 0.08em; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(245,242,236,0.35);
+    padding: 36px 40px;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    header { padding: 16px 20px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 120px 28px 60px; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 60px 28px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    section { padding: 72px 24px; }
+    .whatis-layout { grid-template-columns: 1fr; gap: 40px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .solution-cards { grid-template-columns: 1fr; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .producer-strip { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; }
+    .flow-steps { grid-template-columns: 1fr; gap: 32px; }
+    .flow-steps::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">Atreyu <span>Family</span></a>
+  <a class="header-cta" href="#contact">無料相談はこちら</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">アトレイユファミリー · Video Production Community</p>
+    <h1 class="hero-headline">
+      100名以上のプロが集まる<br>映像コミュニティへ、<br><em>直接</em>依頼する。
+    </h1>
+    <p class="hero-sub">
+      仲介手数料ゼロ。最低単価1万円以上のクリエイターだけが在籍する、新しい映像制作のかたち。広告代理店・企業マーケ担当者の方へ。
+    </p>
+    <a class="hero-cta" href="#contact">
+      Discordで無料相談する →
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-num">100<span>名+</span></div>
+        <div class="stat-label">コミュニティ参加者<br>（設立わずか3ヶ月）</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">¥0</div>
+        <div class="stat-label">仲介手数料<br>（完全無料）</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1<span>億回+</span></div>
+        <div class="stat-label">Web CM<br>最高再生数実績</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2.7<span>倍</span></div>
+        <div class="stat-label">担当企業の<br>年商成長実績</div>
+      </div>
+    </div>
+    <div class="hero-tagline">
+      <strong>PHILOSOPHY</strong>
+      駆け抜けるな、飛び抜けろ。
+    </div>
+    <div class="media-badges">
+      <span class="badge">ORICON NEWS</span>
+      <span class="badge">PRESIDENT Online</span>
+      <span class="badge">NewsPicks</span>
+      <span class="badge">PR TIMES</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section class="whatis">
+  <div class="container">
+    <p class="section-label reveal">What is Atreyu Family</p>
+    <h2 class="section-title reveal">アトレイユファミリーとは</h2>
+    <div class="divider reveal"></div>
+    <div class="whatis-layout">
+      <div class="whatis-text reveal">
+        <p>アトレイユファミリーは、映像のプロフェッショナルたちが集う<strong>完全無料の映像制作コミュニティ</strong>です。テレビCMからWeb動画、SNSショート動画まで、多様なジャンルを手がけるクリエイターが100名以上在籍しています。</p>
+        <p>プラットフォームや制作会社を通じた依頼と決定的に違うのは、<strong>仲介手数料がゼロ</strong>であること。お支払いいただいた予算は100%、制作クオリティに使われます。</p>
+        <p>コミュニティには最低単価1万円以上の案件しか流通しません。<strong>格安競争に参加しないクリエイター</strong>が集まる場所だからこそ、発注する企業・代理店にとっても、質の保証された選択肢になります。</p>
+      </div>
+      <div class="reveal">
+        <div class="whatis-visual">
+          <div class="philosophy-text">
+            「ただ綺麗なだけの映像を<br>作る時代は、もう終わった。」<br><br>
+            クライアントが本当に求めているのは、<br>
+            映像を通じて<em>ビジネスの課題が<br>どう解決されるか</em>という<br>
+            本質的な価値です。
+          </div>
+          <div class="philosophy-sig">アトレイユファミリー · Community Philosophy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label reveal">The Problem</p>
+    <h2 class="section-title reveal">映像制作の依頼、<br>こんな悩みはありませんか？</h2>
+    <div class="divider reveal"></div>
+    <div class="problem-grid">
+      <div class="problem-item reveal">
+        <div class="icon">💸</div>
+        <h3>中間コストで予算が削られる</h3>
+        <p>制作会社・代理店を通じた依頼は、営業費・管理費・マージンが上乗せされる。制作に使えるのは予算のほんの一部になってしまう。</p>
+      </div>
+      <div class="problem-item reveal">
+        <div class="icon">🎲</div>
+        <h3>クオリティが読めない</h3>
+        <p>クラウドソーシングや個人フリーランスは品質のばらつきが大きく、仕上がりまで不安が続く。格安依頼が格安クオリティで返ってくる。</p>
+      </div>
+      <div class="problem-item reveal">
+        <div class="icon">🔀</div>
+        <h3>窓口がバラバラで管理が大変</h3>
+        <p>ディレクター・カメラマン・編集者とそれぞれやり取りする手間。担当が変わるたびに引き継ぎコストが発生する。</p>
+      </div>
+      <div class="problem-item reveal">
+        <div class="icon">📉</div>
+        <h3>成果につながる映像にならない</h3>
+        <p>「綺麗な映像」は届いても、ビジネス課題の解決に結びつかない。マーケティング視点を持つ制作チームが見つからない。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <p class="section-label reveal">Why Atreyu Family</p>
+    <h2 class="section-title reveal">アトレイユファミリーを<br>選ぶ3つの理由</h2>
+    <div class="divider reveal"></div>
+    <div class="solution-cards">
+      <div class="sol-card reveal">
+        <div class="sol-num">01</div>
+        <h3>手数料ゼロ。<br>予算が全額制作費になる。</h3>
+        <p>仲介プラットフォームも制作会社の管理費もかかりません。お支払いいただいた全額が、クリエイターへの制作費として使われます。同じ予算で、より高いクオリティが手に入ります。</p>
+      </div>
+      <div class="sol-card reveal">
+        <div class="sol-num">02</div>
+        <h3>最低単価1万円以上。<br>質を担保したクリエイターのみ。</h3>
+        <p>アトレイユファミリーには格安案件が流通しません。単価競争に参加しないクリエイターだけが在籍しているため、発注側も「質が保証された選択肢」の中から選べます。</p>
+      </div>
+      <div class="sol-card reveal">
+        <div class="sol-num">03</div>
+        <h3>プロデューサーが<br>窓口を一本化。</h3>
+        <p>要件ヒアリングからクリエイターのアサイン、進捗管理、納品まで、コミュニティのプロデューサーが一気通貫で対応。複数の担当者とやり取りする手間は一切ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+  <div class="container">
+    <p class="section-label reveal">Track Record</p>
+    <h2 class="section-title reveal">コミュニティが生み出してきた実績</h2>
+    <div class="divider reveal"></div>
+    <p class="cred-intro reveal">アトレイユファミリーのプロデューサーおよびクリエイターたちが手がけてきた制作実績の一部です。<strong>守秘義務のある案件はA社・B社等の表記</strong>で対応しています。</p>
+    <div class="cred-grid">
+      <div class="cred-card reveal">
+        <div class="num">1<sup>億回</sup></div>
+        <h3>Web CM 最高再生数</h3>
+        <p>大手企業からベンチャーまで、幅広い規模のWebCM実績。バズを計算したクリエイティブ設計。</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="num">300<sup>万回</sup></div>
+        <h3>TikTok 広告なし再生</h3>
+        <p>オーガニックで300万回再生達成。SNS特性を熟知した縦型・短尺動画の企画・制作。</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="num">2.7<sup>倍</sup></div>
+        <h3>担当企業の年商成長</h3>
+        <p>マーケティング戦略×映像制作の組み合わせで、2年で企業年商を2.7倍に伸長した実績。</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="num">TV</div>
+        <h3>テレビCM制作</h3>
+        <p>地上波テレビCMの企画〜制作〜納品まで。大手有名企業案件の実績あり（守秘義務につき社名非公開）。</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="num">MV</div>
+        <h3>ミュージックビデオ</h3>
+        <p>有名アーティストのMV制作担当実績。アーティスト・レーベルからの案件も対応可能。</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="num">SNS</div>
+        <h3>SNS・ショート動画</h3>
+        <p>Instagram Reels、TikTok、X動画のオーガニック・広告両対応。媒体・目的別の最適設計。</p>
+      </div>
+    </div>
+
+    <!-- PRODUCER STRIP -->
+    <div class="producer-strip reveal">
+      <div>
+        <p class="producer-title">Community Producer</p>
+        <p class="producer-name">多喜 翠星</p>
+        <p class="producer-role">
+          Atreyu / 代表<br>
+          プロデュース系VTuber<br>
+          元テレビCMプロデューサー
+        </p>
+      </div>
+      <div class="producer-bio">
+        20代でテレビCMプロデューサーとして<strong>1億円規模のプロジェクト</strong>を主導。現在はマーケターとして企業の売上成長を支援しながら、アトレイユファミリーの主宰として映像制作の新しいかたちを牽引。映像を「ビジネスの課題解決ツール」として扱うマーケティング視点が、コミュニティ全体の制作思想に反映されています。
+      </div>
+    </div>
+
+    <div class="media-section reveal">
+      <h3>Media Coverage</h3>
+      <div class="media-logos">
+        <div class="media-logo">ORICON NEWS</div>
+        <div class="media-logo">PRESIDENT Online</div>
+        <div class="media-logo">NewsPicks</div>
+        <div class="media-logo">PR TIMES</div>
+        <div class="media-logo">ウレぴあ総研</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow">
+  <div class="container">
+    <p class="section-label reveal">How It Works</p>
+    <h2 class="section-title reveal">依頼の流れ</h2>
+    <div class="divider reveal"></div>
+    <div class="flow-steps">
+      <div class="flow-step reveal">
+        <div class="step-num">01</div>
+        <h3>Discordで無料相談</h3>
+        <p>Discordに参加し、プロデューサーへ直接メッセージ。予算・目的・納期を共有するだけでOK。</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="step-num">02</div>
+        <h3>要件ヒアリング</h3>
+        <p>課題・ターゲット・配信媒体をヒアリング。マーケティング視点で最適な映像を逆算設計します。</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="step-num">03</div>
+        <h3>チームマッチング</h3>
+        <p>案件に最適なクリエイターをコミュニティ内でアサイン。見積もり合意後、制作開始。</p>
+      </div>
+      <div class="flow-step reveal">
+        <div class="step-num">04</div>
+        <h3>制作・納品</h3>
+        <p>プロデューサーが進捗を管理。窓口は一本化したまま、スムーズに納品まで完走。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="section-label reveal">FAQ</p>
+    <h2 class="section-title reveal">よくある質問</h2>
+    <div class="divider reveal"></div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          手数料ゼロとはどういう仕組みですか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">アトレイユファミリーはクリエイターコミュニティの維持をクリエイター側の活動から成立させており、クライアントへの仲介手数料は一切いただきません。お支払い金額はそのままクリエイターへの制作費として使われます。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          予算はいくらから相談できますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">最低単価は1本1万円〜としています。ショート動画・SNS用コンテンツから、テレビCMクオリティの映像まで、予算規模に応じた最適なプランをご提案します。まずはご相談ください。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          守秘義務・NDAの対応は可能ですか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">はい、対応可能です。機密性の高い案件についてはNDA締結のうえ対応します。過去実績の掲載も、守秘義務がある場合はA社・B社等の表記で対応しています。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          見積もりだけの相談もできますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">もちろんです。「予算感だけ知りたい」「まだ発注を決めていない」という段階でも大歓迎です。Discordにて気軽にメッセージください。</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          どんなジャンルの映像に対応していますか？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">テレビCM、Web CM、企業VP、採用動画、MV、SNS縦型ショート動画、ショートドラマ・企画ものなど幅広く対応可能です。ブランディング用高品質映像から、SNSバズを狙った動画まで、目的に応じてご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final" id="contact">
+  <div class="container">
+    <p class="section-label reveal">Contact</p>
+    <h2 class="section-title reveal">まず、話してみてください。</h2>
+    <div class="divider reveal"></div>
+    <p class="reveal">見積もりだけでも、予算感の確認だけでも構いません。Discordで直接プロデューサーにメッセージを送るだけで相談が始まります。費用は一切かかりません。</p>
+    <a class="cta-btn reveal" href="https://discord.gg/" target="_blank">
+      Discordで無料相談する →
+    </a>
+    <p class="cta-note reveal">無料 · 返信は通常24時間以内 · NDA対応可</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <a href="#">アトレイユファミリー</a> · All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
