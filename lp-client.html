@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atreyu Family | 映像制作の依頼</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0f0e0c;
@@ -67,7 +67,7 @@
     border-bottom: 1px solid var(--border);
   }
   .logo {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
     font-weight: 300;
     letter-spacing: 0.18em;
@@ -113,7 +113,7 @@
     z-index: 2;
   }
   .hero-eyebrow {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.8rem;
     letter-spacing: 0.3em;
     color: var(--gold);
@@ -179,12 +179,13 @@
     border-left: 3px solid var(--gold);
   }
   .stat-num {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
     font-weight: 600;
     color: var(--ink);
     line-height: 1;
     margin-bottom: 6px;
+    font-feature-settings: "lnum";
   }
   .stat-num span { font-size: 1rem; font-weight: 300; }
   .stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; line-height: 1.6; }
@@ -199,7 +200,7 @@
   .hero-tagline strong {
     display: block;
     font-size: 0.72rem;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     letter-spacing: 0.22em;
     color: var(--gold);
     font-weight: 300;
@@ -224,7 +225,7 @@
   section { padding: 100px 40px; }
   .container { max-width: 1000px; margin: 0 auto; }
   .section-label {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.75rem;
     letter-spacing: 0.35em;
     color: var(--gold);
@@ -268,7 +269,7 @@
   }
   .whatis-visual::before {
     content: '"';
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 8rem;
     color: var(--gold);
     opacity: 0.15;
@@ -292,7 +293,7 @@
   }
   .philosophy-sig {
     margin-top: 24px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.72rem;
     letter-spacing: 0.2em;
     color: rgba(245,242,236,0.35);
@@ -351,7 +352,7 @@
   }
   .sol-card:hover::after { transform: scaleX(1); }
   .sol-num {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 300;
     color: var(--gold);
@@ -389,12 +390,13 @@
     padding: 36px 28px;
   }
   .cred-card .num {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--ink);
     line-height: 1;
     margin-bottom: 8px;
+    font-feature-settings: "lnum";
   }
   .cred-card .num sup { font-size: 1rem; }
   .cred-card h3 {
@@ -417,7 +419,7 @@
     margin-top: 2px;
   }
   .producer-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.72rem;
     letter-spacing: 0.3em;
     color: var(--gold);
@@ -453,7 +455,7 @@
     border-top: 1px solid var(--border);
   }
   .media-section h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.72rem;
     letter-spacing: 0.3em;
     color: var(--gold);
@@ -464,7 +466,7 @@
   .media-logo {
     padding: 14px 24px;
     border: 1px solid var(--border);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 0.82rem;
     letter-spacing: 0.1em;
     color: var(--muted);
@@ -493,7 +495,7 @@
     width: 64px; height: 64px;
     background: var(--ink);
     color: var(--gold);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 600;
     display: flex;
@@ -595,8 +597,8 @@
     .hero-left { padding: 100px 28px 56px; }
     .hero-left::after { display: none; }
     .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; margin-bottom: 20px; }
-    .hero-headline { font-size: clamp(1.8rem, 7vw, 2.4rem); margin-bottom: 24px; }
-    .hero-sub { font-size: 0.92rem; line-height: 2; max-width: 100%; margin-bottom: 36px; }
+    .hero-headline { font-size: 1.45rem; margin-bottom: 24px; line-height: 1.65; }
+    .hero-sub { font-size: 0.88rem; line-height: 2; max-width: 100%; margin-bottom: 36px; }
     .hero-cta { padding: 16px 28px; font-size: 0.9rem; width: 100%; justify-content: center; }
     .hero-right { padding: 48px 28px; }
     .hero-stats { grid-template-columns: 1fr 1fr; gap: 2px; }
@@ -634,7 +636,7 @@
       100名以上のプロが集まる<br>映像コミュニティへ、<br><em>直接</em>依頼する。
     </h1>
     <p class="hero-sub">
-      仲介手数料ゼロ。<br>最低単価1万円以上のクリエイターだけが在籍する、新しい映像制作のかたち。<br>広告代理店・企業マーケ担当者の方へ。
+      仲介手数料ゼロ。最低単価1万円以上のクリエイターだけが在籍する、新しい映像制作のかたち。<br>広告代理店・企業マーケ担当者の方へ。
     </p>
     <a class="hero-cta" href="https://discord.com/invite/XdcmJ3gttD" target="_blank">
       Discordで無料相談する →
