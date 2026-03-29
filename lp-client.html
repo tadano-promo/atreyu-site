@@ -592,18 +592,29 @@
   @media (max-width: 768px) {
     header { padding: 16px 20px; }
     .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 100px 28px 60px; }
+    .hero-left { padding: 100px 28px 56px; }
     .hero-left::after { display: none; }
-    .hero-right { padding: 60px 28px; }
-    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; margin-bottom: 20px; }
+    .hero-headline { font-size: clamp(1.8rem, 7vw, 2.4rem); margin-bottom: 24px; }
+    .hero-sub { font-size: 0.92rem; line-height: 2; max-width: 100%; margin-bottom: 36px; }
+    .hero-cta { padding: 16px 28px; font-size: 0.9rem; width: 100%; justify-content: center; }
+    .hero-right { padding: 48px 28px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .stat-box { padding: 20px 16px; }
+    .stat-num { font-size: 2rem; }
+    .stat-label { font-size: 0.68rem; }
+    .hero-tagline { font-size: 1rem; }
     section { padding: 72px 24px; }
+    .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
     .whatis-layout { grid-template-columns: 1fr; gap: 40px; }
     .problem-grid { grid-template-columns: 1fr; }
     .solution-cards { grid-template-columns: 1fr; }
     .cred-grid { grid-template-columns: 1fr; }
+    .cred-card .num { font-size: 2.4rem; }
     .producer-strip { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; }
     .flow-steps { grid-template-columns: 1fr; gap: 32px; }
     .flow-steps::before { display: none; }
+    .cta-btn { width: 100%; justify-content: center; padding: 20px 28px; }
   }
 </style>
 </head>
@@ -623,7 +634,7 @@
       100名以上のプロが集まる<br>映像コミュニティへ、<br><em>直接</em>依頼する。
     </h1>
     <p class="hero-sub">
-      仲介手数料ゼロ。最低単価1万円以上のクリエイターだけが在籍する、新しい映像制作のかたち。広告代理店・企業マーケ担当者の方へ。
+      仲介手数料ゼロ。<br>最低単価1万円以上のクリエイターだけが在籍する、新しい映像制作のかたち。<br>広告代理店・企業マーケ担当者の方へ。
     </p>
     <a class="hero-cta" href="#contact">
       Discordで無料相談する →
