@@ -237,7 +237,7 @@ main { padding-top: 60px; }
   user-select: none;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 480px; }
+.hero-content { position: relative; z-index: 1; max-width: 560px; }
 
 .hero-eyebrow {
   font-family: var(--font-serif-en);
@@ -251,9 +251,9 @@ main { padding-top: 60px; }
 
 .hero-title {
   font-family: var(--font-serif-jp);
-  font-size: clamp(24px, 6.5vw, 44px);
+  font-size: clamp(24px, 4.5vw, 38px);
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--brown-dark);
   margin-bottom: 24px;
 }
