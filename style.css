@@ -17,8 +17,8 @@
   --text-light:  #9a7858;
   --white:       #fdf8f0;
 
-  --font-serif-en: 'Cormorant Garamond', Georgia, serif;
-  --font-serif-jp: 'Noto Serif JP', serif;
+  --font-serif-en: 'Playfair Display', Georgia, serif;
+  --font-serif-jp: 'Shippori Mincho', serif;
   --font-sans:     'Noto Sans JP', sans-serif;
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
