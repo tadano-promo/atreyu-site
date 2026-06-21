@@ -1117,13 +1117,40 @@ main { padding-top: 60px; }
 }
 
 .status {
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-weight: 500;
   letter-spacing: 0.02em;
 }
-.status--yes  { color: var(--text); }
-.status--no   { color: var(--text-light); font-weight: 400; }
-.status--weak { color: var(--brown-mid); font-weight: 400; }
+.status::before {
+  flex-shrink: 0;
+  font-size: 14px;
+  line-height: 1;
+}
+.status--yes  {
+  color: var(--brown-dark);
+}
+.status--yes::before {
+  content: "○";
+  color: var(--brown-dark);
+}
+.status--weak {
+  color: var(--brown-mid);
+  font-weight: 400;
+}
+.status--weak::before {
+  content: "△";
+  color: var(--brown-mid);
+}
+.status--no {
+  color: var(--text-light);
+  font-weight: 400;
+}
+.status--no::before {
+  content: "×";
+  color: var(--text-light);
+}
 
 .comparison-note {
   font-size: 11px;
