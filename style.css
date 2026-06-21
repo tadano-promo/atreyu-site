@@ -350,7 +350,7 @@ main { padding-top: 60px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   text-align: center;
   flex: 1;
   min-width: 100px;
@@ -371,10 +371,10 @@ main { padding-top: 60px; }
 }
 
 .trust-label {
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: rgba(240,232,216,0.55);
-  line-height: 1.4;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: rgba(240,232,216,0.65);
+  line-height: 1.5;
 }
 
 .trust-divider {
@@ -890,6 +890,8 @@ main { padding-top: 60px; }
 
 @media (max-width: 600px) {
   .merits-grid { grid-template-columns: 1fr; }
+  .trust-label { font-size: 11px; }
+  .trust-item { min-width: 84px; }
 }
 
 .merit-card {
