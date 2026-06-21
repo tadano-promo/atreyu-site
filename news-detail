@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Atreyuの最新情報・プレスリリース詳細。">
+<title>NEWS詳細 | Atreyu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LFH7Z4EGW8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LFH7Z4EGW8');
+</script>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo-link">
+      <img src="logo.png" alt="Atreyu" style="height:36px;width:auto;display:block;">
+      <span class="nav-brand">Atreyu</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-menu" id="nav-menu">
+    <a href="index.html" class="nav-item">HOME</a>
+    <a href="marketing.html" class="nav-item">マーケティング</a>
+    <a href="video.html" class="nav-item">映像制作</a>
+    <a href="lp-client.html" class="nav-item">Atreyu Family</a>
+    <a href="concept.html" class="nav-item">コンセプト・ルーツ</a>
+    <a href="vision.html" class="nav-item">これから</a>
+    <a href="news.html" class="nav-item">NEWS</a>
+    <a href="contact.html" class="nav-item nav-item--cta">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <span class="page-hero__eyebrow">News &amp; Press</span>
+    <h1 class="page-hero__title" id="nd-title">NEWS詳細</h1>
+    <p class="page-hero__sub" id="nd-date"></p>
+  </section>
+
+  <div class="section">
+    <div class="prose reveal" id="nd-body">
+      <p>記事を読み込んでいます…</p>
+    </div>
+
+    <div style="margin-top:48px">
+      <a href="news.html" class="btn btn--outline">← NEWS一覧へ戻る</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo-wrap">
+      <span class="footer-brand" style="color:rgba(240,232,216,0.6);font-family:'Playfair Display',serif;font-size:20px;letter-spacing:0.2em;">Atreyu</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="marketing.html">マーケティング</a>
+      <a href="video.html">映像制作</a>
+      <a href="lp-client.html">Atreyu Family</a>
+      <a href="concept.html">コンセプト</a>
+      <a href="vision.html">これから</a>
+      <a href="news.html">NEWS</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="policy.html">ポリシー</a>
+    </nav>
+    <p class="footer-copy">©Atreyu 2026</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="news-data.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id');
+  var item = (window.ATREYU_NEWS || []).find(function (n) { return n.id === id; });
+
+  var titleEl = document.getElementById('nd-title');
+  var dateEl  = document.getElementById('nd-date');
+  var bodyEl  = document.getElementById('nd-body');
+
+  if (!item) {
+    titleEl.textContent = 'ページが見つかりません';
+    dateEl.textContent = '';
+    bodyEl.innerHTML = '<p>お探しのニュースは見つかりませんでした。<a href="news.html">NEWS一覧</a>からご確認ください。</p>';
+    return;
+  }
+
+  document.title = item.title + ' | Atreyu NEWS';
+  titleEl.textContent = item.title;
+  dateEl.textContent = item.date;
+
+  var html = '<p>' + item.body.replace(/\n/g, '<br>') + '</p>';
+
+  if (item.externalUrl) {
+    html += '<p style="margin-top:32px">'
+          + '<a href="' + item.externalUrl + '" target="_blank" rel="noopener" class="btn btn--ghost">'
+          + (item.externalLabel || '詳細を見る') + ' ↗</a>'
+          + '</p>';
+  }
+
+  bodyEl.innerHTML = html;
+})();
+</script>
+</body>
+</html>
