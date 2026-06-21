@@ -968,6 +968,16 @@ main { padding-top: 60px; }
 .service-card__visual {
   position: relative;
   overflow: hidden;
+  display: block;
+  cursor: pointer;
+}
+
+.service-card__visual .service-card__img {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.service-card__visual:hover .service-card__img {
+  transform: scale(1.04);
 }
 
 .service-card__img {
