@@ -190,6 +190,16 @@ main { padding-top: 60px; }
 /* ===== SECTION COMMON ===== */
 .section { padding: 80px 28px; }
 
+.section-divider {
+  height: 1px;
+  background: rgba(122,79,46,0.3);
+  margin: 0 28px;
+}
+
+.section--plans {
+  padding-top: 40px;
+}
+
 .section-header { margin-bottom: 48px; }
 
 .section-eyebrow {
@@ -868,7 +878,7 @@ main { padding-top: 60px; }
 /* ===== MERITS SECTION (marketing.html) ===== */
 .section--merits {
   padding-top: 64px;
-  padding-bottom: 64px;
+  padding-bottom: 40px;
 }
 
 .merits-grid {
@@ -1014,7 +1024,7 @@ main { padding-top: 60px; }
 
 
 /* ===== COMPARISON TABLE (marketing.html) — mobile-first card layout ===== */
-.section--comparison { padding-top:64px; padding-bottom:64px; }
+.section--comparison { padding-top:40px; padding-bottom:40px; }
 
 .comparison-table-wrap {
   margin-bottom: 16px;
