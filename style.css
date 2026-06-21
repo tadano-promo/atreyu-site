@@ -1138,7 +1138,12 @@ main { padding-top: 60px; }
 
 /* --- Desktop/tablet (≥700px): switch back to a real table --- */
 @media (min-width: 700px) {
-  .comparison-table-wrap { overflow-x: auto; }
+  .comparison-table-wrap {
+    overflow-x: auto;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .comparison-table {
     table-layout: fixed;
