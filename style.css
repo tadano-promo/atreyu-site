@@ -972,7 +972,7 @@ main { padding-top: 60px; }
 
 .service-card__img {
   width: 100%;
-  height: 140px;
+  height: 200px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -1001,3 +1001,192 @@ main { padding-top: 60px; }
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 /* ===== /SERVICE CARD IMAGE ===== */
+
+
+/* ===== COMPARISON TABLE (marketing.html) — mobile-first card layout ===== */
+.section--comparison { padding-top:64px; padding-bottom:64px; }
+
+.comparison-table-wrap {
+  margin-bottom: 16px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* --- Mobile (default): stack each row as a card --- */
+.comparison-table thead { display: none; }
+
+.comparison-table tbody,
+.comparison-table tr {
+  display: block;
+  width: 100%;
+}
+
+.comparison-table tr {
+  margin-bottom: 20px;
+  border: 1px solid rgba(122,79,46,0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.comparison-table tr:last-child { margin-bottom: 0; }
+
+.comparison-table td {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  border-bottom: 1px solid rgba(122,79,46,0.08);
+  text-align: right;
+}
+
+.comparison-table td:last-child { border-bottom: none; }
+
+.comparison-table .td-label {
+  display: block;
+  background: var(--brown-dark);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+  padding: 10px 16px;
+  line-height: 1.6;
+}
+.comparison-table .td-label small {
+  display: block;
+  font-weight: 300;
+  color: rgba(240,232,216,0.65);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+/* attach a data-label before each value cell, set via HTML attr in markup OR via nth-child fallback */
+.comparison-table .td-atreyu::before,
+.comparison-table .td-other::before {
+  content: attr(data-col);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.comparison-table .td-atreyu {
+  background: rgba(74,44,16,0.06);
+  color: var(--text);
+  font-weight: 500;
+}
+.comparison-table .td-atreyu small {
+  display: block;
+  font-weight: 300;
+  font-size: 11px;
+  color: var(--text-mid);
+  margin-top: 2px;
+}
+.comparison-table .td-price {
+  font-family: var(--font-serif-en);
+  font-size: 18px;
+  color: var(--brown-dark);
+}
+
+.comparison-table .td-other {
+  color: var(--text-mid);
+  font-size: 12px;
+}
+.comparison-table .td-other small {
+  display: block;
+  color: var(--text-light);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.ctag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.ctag--yes  { background: rgba(74,44,16,0.12);  color: var(--brown-dark); }
+.ctag--no   { background: var(--bg-alt);        color: var(--text-light); }
+.ctag--weak { background: rgba(184,137,90,0.18); color: var(--brown-mid); }
+
+.comparison-note {
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.9;
+  margin-top: 12px;
+}
+
+/* --- Desktop/tablet (≥700px): switch back to a real table --- */
+@media (min-width: 700px) {
+  .comparison-table-wrap { overflow-x: auto; }
+
+  .comparison-table thead { display: table-header-group; }
+
+  .comparison-table tbody,
+  .comparison-table tr { display: table-row; }
+
+  .comparison-table tr {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .comparison-table thead tr { background: var(--bg-alt); }
+
+  .comparison-table th,
+  .comparison-table td {
+    display: table-cell;
+    border: 1px solid rgba(122,79,46,0.15);
+    text-align: center;
+    padding: 10px 14px;
+  }
+
+  .comparison-table th {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+  .comparison-table th small {
+    display: block;
+    font-weight: 300;
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+  .comparison-table .th-atreyu {
+    background: var(--brown-dark);
+    color: var(--white);
+  }
+
+  .comparison-table .td-label {
+    display: table-cell;
+    text-align: left;
+    background: var(--cream);
+    color: var(--text);
+    font-weight: 500;
+    width: 130px;
+  }
+  .comparison-table .td-label small { color: var(--text-light); }
+
+  .comparison-table .td-atreyu::before,
+  .comparison-table .td-other::before {
+    content: none;
+  }
+
+  .comparison-table .td-atreyu,
+  .comparison-table .td-other {
+    justify-content: center;
+  }
+}
+/* ===== /COMPARISON TABLE ===== */
