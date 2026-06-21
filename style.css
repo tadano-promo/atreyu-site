@@ -1108,7 +1108,6 @@ main { padding-top: 60px; }
 
 .comparison-table .td-other {
   color: var(--text-mid);
-  font-size: 12px;
 }
 .comparison-table .td-other small {
   display: block;
@@ -1117,17 +1116,14 @@ main { padding-top: 60px; }
   margin-top: 2px;
 }
 
-.ctag {
-  display: inline-block;
-  font-size: 10px;
-  padding: 2px 8px;
-  border-radius: 99px;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
+.status {
+  display: inline;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
-.ctag--yes  { background: rgba(74,44,16,0.12);  color: var(--brown-dark); }
-.ctag--no   { background: var(--bg-alt);        color: var(--text-light); }
-.ctag--weak { background: rgba(184,137,90,0.18); color: var(--brown-mid); }
+.status--yes  { color: var(--text); }
+.status--no   { color: var(--text-light); font-weight: 400; }
+.status--weak { color: var(--brown-mid); font-weight: 400; }
 
 .comparison-note {
   font-size: 11px;
