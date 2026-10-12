@@ -9,6 +9,14 @@
 
 window.ATREYU_NEWS = [
   {
+    id: "salon-tiktok-2026-10",
+    date: "2026.10.12",
+    title: "新しい商材パッケージ「美容室専門 TikTok運用」ができました",
+    body: "関西の美容室さまに向けた新しいパッケージ「美容室専門 TikTok運用」の受付を開始しました。\n「バズらせるためではなく、予約を入れるためのTikTok」をコンセプトに、企画・撮影・編集・投稿・コメント返信までをまとめてお引き受けします。\n\n・初期費用は0円です\n・1本ずつ丁寧につくるため、同時にお引き受けするのは10社さままでです\n・30分の無料相談（オンライン可）では、今の集客の状況をお聞きして、客単価から「1日何人増えれば元が取れるか」を計算してお伝えします\n\n内容・料金・ご相談の流れは、専用ページにまとめています。\n<a href=\"lp-salon-tiktok.html\">https://atreyu.jp/lp-salon-tiktok.html</a>",
+    externalUrl: "https://atreyu.jp/lp-salon-tiktok.html",
+    externalLabel: "専用ページを見る"
+  },
+  {
     id: "branc-2026-01",
     date: "2026.01.09",
     title: "「Atreyu Family」がBrancさまに記事掲載いただきました",
