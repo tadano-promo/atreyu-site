@@ -17,6 +17,22 @@ window.ATREYU_NEWS = [
     externalLabel: "専用ページを見る"
   },
   {
+    id: "profile-2026-10",
+    date: "2026.10.12",
+    title: "代表プロフィールページを公開しました",
+    body: "Atreyu代表・山﨑一輝のプロフィールページを公開しました。\nこれまで担当してきた仕事と、Atreyuでお手伝いできることをまとめています。",
+    externalUrl: "https://atreyu.jp/profile.html",
+    externalLabel: "プロフィールを見る"
+  },
+  {
+    id: "family-lp-2026-10",
+    date: "2026.10.12",
+    title: "Atreyu Family の依頼者向けページを新しくしました",
+    body: "映像クリエイターのコミュニティ「Atreyu Family」の、依頼者さま向けページを新しくしました。\n仲介手数料0円の仕組み、料金の考え方、依頼できること、Discordに参加してから依頼するまでの流れを、はじめての方にも分かるようにまとめています。\n\n相談・見積もりは無料です。",
+    externalUrl: "https://atreyu.jp/lp-client.html",
+    externalLabel: "依頼者向けページを見る"
+  },
+  {
     id: "branc-2026-01",
     date: "2026.01.09",
     title: "「Atreyu Family」がBrancさまに記事掲載いただきました",
