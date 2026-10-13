@@ -1253,3 +1253,6 @@ main { padding-top: 60px; }
   }
 }
 /* ===== /COMPARISON TABLE ===== */
+
+/* ===== 改行位置の調整（スマホで変なところで折り返さないよう、言葉のまとまりごとに折り返す） ===== */
+.nw { display: inline-block; }
