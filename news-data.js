@@ -20,7 +20,7 @@ window.ATREYU_NEWS = [
     id: "profile-2026-10",
     date: "2026.10.12",
     title: "代表プロフィールページを公開しました",
-    body: "Atreyu代表・山﨑一輝のプロフィールページを公開しました。\nこれまで担当してきた仕事と、Atreyuでお手伝いできることをまとめています。",
+    body: "Atreyu代表のプロフィールページを公開しました。\nこれまで担当してきた仕事と、Atreyuでお手伝いできることをまとめています。",
     externalUrl: "https://atreyu.jp/profile.html",
     externalLabel: "プロフィールを見る"
   },
