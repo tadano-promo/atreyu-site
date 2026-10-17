@@ -9,6 +9,14 @@
 
 window.ATREYU_NEWS = [
   {
+    id: "column-start-2026-10",
+    date: "2026.10.18",
+    title: "コラムを始めました。1本目は「なぜ、TikTokなのか。」",
+    body: "新しく「コラム」のコーナーをつくりました。お店や会社の集客に役立つ考え方を、アトレイユの言葉でまとめていきます。\n\n1本目は「なぜ、TikTokなのか。」。アトレイユがTikTokに絞って、売る・予約を取るお手伝いをしている理由をまとめました。\nあわせて、目的別のSNSの選び方をまとめた「TikTok・Instagram・X・Threads・Facebook、どれを選ぶ？」も公開しています。",
+    externalUrl: "https://atreyu.jp/column/why-tiktok.html",
+    externalLabel: "コラムを読む"
+  },
+  {
     id: "goods-tiktok-2026-10",
     date: "2026.10.17",
     title: "通販・便利グッズ向けの「TikTok運用」の受付を始めました",
