@@ -73,7 +73,9 @@
 .col-card{display:block;background:var(--cream);border:1px solid rgba(122,79,46,0.18);padding:22px 22px 20px;transition:transform .2s,box-shadow .2s}
 .col-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,26,8,0.08)}
 .col-card time{font-size:12px;color:var(--text-light);letter-spacing:.05em}
-.col-card h2{font-family:var(--font-serif-jp);font-weight:400;font-size:19px;line-height:1.6;color:var(--brown-dark);margin-top:6px}
+.col-card h2{font-family:var(--font-serif-jp);font-weight:400;font-size:19px;line-height:1.6;color:var(--brown-dark)}
+.col-card{position:relative;padding-right:48px!important}
+.col-card::after{content:"→";position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--brown-light);font-size:18px}
 .col-card p{font-size:13.5px;color:var(--text-mid);line-height:1.9;margin-top:8px}
 .col-card .more{display:inline-block;margin-top:10px;font-size:13px;color:var(--brown);border-bottom:1px solid rgba(122,79,46,0.4)}
 
@@ -114,16 +116,12 @@
   <div class="col-wrap">
     <div class="col-list">
       <a href="/column/why-tiktok.html" class="col-card">
-        <time datetime="2026-10-18">2026.10.18</time>
         <h2>なぜ、TikTokなのか。</h2>
-        <p>フォロワーが少なくても見てもらえる。使って見せると欲しくなる。アトレイユがTikTokに絞っている理由をまとめました。</p>
-        <span class="more">読む →</span>
+        <p><span class="nw">フォロワーが少ないお店ほど、</span><span class="nw">TikTokを選ぶ理由があります。</span></p>
       </a>
       <a href="/column/sns-choice.html" class="col-card">
-        <time datetime="2026-10-18">2026.10.18</time>
-        <h2>TikTok・Instagram・X・Threads・Facebook、どれを選ぶ？</h2>
-        <p>SNSは、どれが流行っているかではなく、何をしたいかで選ぶのが近道です。目的別の早見表つきでまとめました。</p>
-        <span class="more">読む →</span>
+        <h2><span class="nw">TikTok・Instagram・</span><span class="nw">X・Threads・Facebook、</span><span class="nw">どれを選ぶ？</span></h2>
+        <p><span class="nw">流行っているかではなく</span><span class="nw">「何をしたいか」で選ぶと、</span><span class="nw">もう迷いません。</span></p>
       </a>
     </div>
   </div>
