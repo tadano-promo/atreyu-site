@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560" role="img" aria-labelledby="t d">
+  <title id="t">お客さまとの関係は、砂時計の形</title>
+  <desc id="d">上半分：知ってもらう、気になってもらう、比べてもらう、買ってもらう・予約してもらう。くびれ：お客さまになる。下半分：もう一度買ってもらう・また来てもらう、好きになってもらう、人に紹介してもらう、お客さま自身が発信してくれる。</desc>
+  <defs>
+    <style>
+      .ln{fill:none;stroke:#b8895a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .th{fill:none;stroke:#b8895a;stroke-width:1;stroke-dasharray:3 5;opacity:.7}
+      .lb{font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:21px;fill:#4a2c10;paint-order:stroke;stroke:#faf6ee;stroke-width:10px;stroke-linejoin:round}
+      .sm{font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:15px;fill:#7a4f2e;letter-spacing:.08em}
+      .key{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:21px;fill:#4a2c10;paint-order:stroke;stroke:#faf6ee;stroke-width:10px;stroke-linejoin:round}
+      .dot{fill:#b8895a}
+    </style>
+  </defs>
+
+  <!-- hourglass outline -->
+  <path class="ln" d="M150 40 H490 L330 280 L490 520 H150 L310 280 Z"/>
+  <!-- frame caps -->
+  <path class="ln" d="M130 40 H510 M130 520 H510"/>
+  <!-- neck mark -->
+  <circle class="dot" cx="320" cy="280" r="4"/>
+
+  <!-- inner dashed guide lines (levels) -->
+  <path class="th" d="M186 95 H454 M222 150 H418 M258 205 H382"/>
+  <path class="th" d="M258 355 H382 M222 410 H418 M186 465 H454"/>
+
+  <!-- upper labels -->
+  <text class="sm" x="130" y="26">上半分　お客さまになるまで</text>
+  <text class="lb" x="320" y="78" text-anchor="middle">知ってもらう</text>
+  <text class="lb" x="320" y="133" text-anchor="middle">気になってもらう</text>
+  <text class="lb" x="320" y="188" text-anchor="middle">比べてもらう</text>
+  <text class="lb" x="320" y="242" text-anchor="middle">買ってもらう・予約してもらう</text>
+
+  <!-- neck label -->
+  <text class="key" x="348" y="287">← お客さまになる</text>
+
+  <!-- lower labels -->
+  <text class="lb" x="320" y="335" text-anchor="middle">もう一度買う・また来る</text>
+  <text class="lb" x="320" y="390" text-anchor="middle">好きになってもらう</text>
+  <text class="lb" x="320" y="445" text-anchor="middle">人に紹介してもらう</text>
+  <text class="lb" x="320" y="500" text-anchor="middle">お客さま自身が発信する</text>
+  <text class="sm" x="130" y="550">下半分　お客さまになった後（売上が積み重なるところ）</text>
+
+  <!-- side arrows -->
+  <path class="ln" d="M100 70 V250 M94 244 L100 250 L106 244"/>
+  <path class="ln" d="M100 310 V490 M94 484 L100 490 L106 484"/>
+</svg>
