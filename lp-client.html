@@ -122,6 +122,7 @@ h2{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4.2vw,36px);lin
 
 /* 窓口 */
 .person{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+.badge-img{width:104px;height:104px;border-radius:50%;background:#f6efe3;border:3px solid var(--brass);object-fit:contain;padding:4px}
 .badge{width:88px;height:88px;border-radius:50%;background:var(--saddle);color:var(--brass);display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:34px}
 .person h3{font-family:var(--serif);font-size:22px}
 .person .role{color:var(--muted);font-size:14px;margin-bottom:12px}
@@ -313,7 +314,7 @@ footer{background:var(--saddle);color:#9c8b76;text-align:center;font-size:13px;p
   <div class="wrap narrow">
     <h2 id="person-title">コミュニティの代表</h2>
     <div class="person">
-      <div class="badge" aria-hidden="true">翠</div>
+      <img class="badge-img" src="family-host.webp" width="104" height="104" alt="多喜 翠星のアイコン" loading="lazy">
       <div>
         <h3>多喜 翠星<span style="font-size:15px;font-weight:400;color:var(--muted)">（kaz）</span></h3>
         <p class="role">アトレイユファミリー 代表</p>
