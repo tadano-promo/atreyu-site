@@ -96,8 +96,10 @@
 .tbl thead th{background:var(--brown-dark);color:var(--white);font-weight:500}
 .tbl td:nth-child(2){font-weight:500;color:var(--brown-dark);white-space:nowrap}
 .note-s{font-size:12px;color:var(--text-light)}
-.summary{background:var(--bg-alt);padding:22px 22px 8px;margin:8px 0 26px}
-.summary li{color:var(--text)}
+.art .summary{background:var(--bg-alt);padding:22px 24px;margin:8px 0 26px;list-style:none}
+.art .summary li{color:var(--text);position:relative;padding-left:1.1em;line-height:1.9;margin:6px 0}
+.art .summary li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.art .summary li strong{display:inline-block}
 .art-cta{margin-top:44px;padding:30px 24px;background:var(--bg-dark);color:var(--white);text-align:center}
 .art-cta p{color:rgba(240,232,216,0.85)!important;font-size:14.5px}
 .related{margin-top:36px}
@@ -188,11 +190,11 @@
 
       <h2><small>まとめ</small><span class="nw">迷ったら</span><span class="nw">「何をしたいか」を</span><span class="nw">ひとつ決める</span></h2>
       <ul class="summary">
-        <li>売りたい・予約を取りたい・まず知ってもらいたい → <strong>TikTok</strong></li>
+        <li><span class="nw">売りたい・</span><span class="nw">予約を取りたい・</span><span class="nw">まず知ってもらいたい</span> → <strong>TikTok</strong></li>
         <li>見た目のよさで選ばれたい → <strong>Instagram</strong></li>
         <li>言葉で信頼を積みたい → <strong>X・Threads</strong></li>
         <li>海外に届けたい → <strong>Facebook ＋ Instagram</strong></li>
-        <li>ブランドの世界観を広く届けたい → <strong>WebCM・テレビCM</strong></li>
+        <li><span class="nw">ブランドの世界観を</span><span class="nw">広く届けたい</span> → <strong>WebCM・テレビCM</strong></li>
       </ul>
 
       <div class="art-cta">

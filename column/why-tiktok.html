@@ -96,8 +96,10 @@
 .tbl thead th{background:var(--brown-dark);color:var(--white);font-weight:500}
 .tbl td:nth-child(2){font-weight:500;color:var(--brown-dark);white-space:nowrap}
 .note-s{font-size:12px;color:var(--text-light)}
-.summary{background:var(--bg-alt);padding:22px 22px 8px;margin:8px 0 26px}
-.summary li{color:var(--text)}
+.art .summary{background:var(--bg-alt);padding:22px 24px;margin:8px 0 26px;list-style:none}
+.art .summary li{color:var(--text);position:relative;padding-left:1.1em;line-height:1.9;margin:6px 0}
+.art .summary li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.art .summary li strong{display:inline-block}
 .art-cta{margin-top:44px;padding:30px 24px;background:var(--bg-dark);color:var(--white);text-align:center}
 .art-cta p{color:rgba(240,232,216,0.85)!important;font-size:14.5px}
 .related{margin-top:36px}
