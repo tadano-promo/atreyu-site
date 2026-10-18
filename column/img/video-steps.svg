@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 926" width="640" height="926" role="img" aria-labelledby="t d">
+  <title id="t">動画1本の裏にある、6つの仕事</title>
+  <desc id="d">企画（何を、誰に、どう見せるか）、準備（場所・人・機材・段取り）、撮影（決めた絵を撮る。光と音）、編集（選ぶ・並べる・長さ・最初の数秒）、仕上げ（音楽・ナレーション・色）、届ける（出す先・時間・文章・コメント返信）。上から下へ順につながる。</desc>
+  <defs>
+    <style>
+      .ln{fill:none;stroke:#b8895a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .box{fill:#faf6ee;stroke:#b8895a;stroke-width:1.6}
+      .no{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:18px;fill:#b8895a;letter-spacing:.1em}
+      .h{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:30px;fill:#4a2c10}
+      .s{font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:21px;fill:#7a4f2e}
+      .cap{font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:19px;fill:#7a4f2e;letter-spacing:.05em}
+    </style>
+  </defs>
+
+  <text class="cap" x="20" y="34">動画1本の裏にある、6つの仕事</text>
+
+  <!-- 01 -->
+  <rect class="box" x="20" y="58" width="600" height="118" rx="2"/>
+  <text class="no" x="42" y="98">01</text>
+  <text class="h" x="92" y="102">企画</text>
+  <text class="s" x="92" y="134">何を、誰に、どう見せるか決める。</text>
+  <text class="s" x="92" y="160">見終わったあと、どう動いてほしいか。</text>
+  <path class="ln" d="M320 176 V198 M312 190 L320 198 L328 190"/>
+  <!-- 02 -->
+  <rect class="box" x="20" y="202" width="600" height="118" rx="2"/>
+  <text class="no" x="42" y="242">02</text>
+  <text class="h" x="92" y="246">準備</text>
+  <text class="s" x="92" y="278">場所を決め、出る人を探し、機材をそろえる。</text>
+  <text class="s" x="92" y="304">日程と、当日の段取り。</text>
+  <path class="ln" d="M320 320 V342 M312 334 L320 342 L328 334"/>
+  <!-- 03 -->
+  <rect class="box" x="20" y="346" width="600" height="118" rx="2"/>
+  <text class="no" x="42" y="386">03</text>
+  <text class="h" x="92" y="390">撮影</text>
+  <text class="s" x="92" y="422">決めた絵を、ちゃんと撮る。</text>
+  <text class="s" x="92" y="448">光と音は、あとから直せない。</text>
+  <path class="ln" d="M320 464 V486 M312 478 L320 486 L328 478"/>
+  <!-- 04 -->
+  <rect class="box" x="20" y="490" width="600" height="118" rx="2"/>
+  <text class="no" x="42" y="530">04</text>
+  <text class="h" x="92" y="534">編集</text>
+  <text class="s" x="92" y="566">使うところを選び、順番を組み、長さを決める。</text>
+  <text class="s" x="92" y="592">最初の数秒の切り方。</text>
+  <path class="ln" d="M320 608 V630 M312 622 L320 630 L328 622"/>
+  <!-- 05 -->
+  <rect class="box" x="20" y="634" width="600" height="118" rx="2"/>
+  <text class="no" x="42" y="674">05</text>
+  <text class="h" x="92" y="678">仕上げ</text>
+  <text class="s" x="92" y="710">音楽・ナレーション・効果音。</text>
+  <text class="s" x="92" y="736">明るさと色味をそろえる。</text>
+  <path class="ln" d="M320 752 V774 M312 766 L320 774 L328 766"/>
+  <!-- 06 -->
+  <rect class="box" x="20" y="778" width="600" height="118" rx="2"/>
+  <text class="no" x="42" y="818">06</text>
+  <text class="h" x="92" y="822">届ける</text>
+  <text class="s" x="92" y="854">どこに、いつ出すか。添える文章。</text>
+  <text class="s" x="92" y="880">コメントへの返信。出してからが本番。</text>
+
+</svg>
