@@ -86,6 +86,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://atreyu.jp/column/cost-or-investment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://atreyu.jp/lp-salon-tiktok.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
