@@ -683,6 +683,7 @@ main { padding-top: 60px; }
 
 .sns-btn svg { width: 16px; height: 16px; color: rgba(240,232,216,0.5); }
 .sns-btn:hover { border-color: rgba(240,232,216,0.5); background: rgba(240,232,216,0.05); }
+.footer-share-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(240,232,216,0.45); margin-bottom: 10px; }
 
 .footer-note {
   font-size: 11px;

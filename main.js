@@ -33,3 +33,16 @@ if (header) {
       : 'none';
   });
 }
+
+// シェアボタン：今見ているページのURLと題名を入れた投稿画面を開く
+document.querySelectorAll('[data-share]').forEach(function (a) {
+  var url = encodeURIComponent(location.href.split('#')[0].split('?')[0]);
+  var title = encodeURIComponent(document.title);
+  var map = {
+    x: 'https://x.com/intent/post?text=' + title + '&url=' + url,
+    threads: 'https://www.threads.net/intent/post?text=' + title + '%20' + url,
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
+    line: 'https://social-plugins.line.me/lineit/share?url=' + url
+  };
+  if (map[a.dataset.share]) a.href = map[a.dataset.share];
+});
