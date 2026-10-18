@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 490" width="640" height="490" role="img" aria-labelledby="t d">
+  <title id="t">ウェイターとドクターの違い</title>
+  <desc id="d">左：ウェイター。注文を聞く → 注文どおりにそのまま出す。右：ドクター。「どうしましたか」と話を聞く → 診る → 処方する →「それは要りません」と言うこともある。</desc>
+  <defs>
+    <style>
+      .ln{fill:none;stroke:#b8895a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      .box{fill:#faf6ee;stroke:#b8895a;stroke-width:1.6}
+      .dash{stroke-dasharray:5 5}
+      .s{font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:22px;fill:#4a2c10}
+      .cap{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;font-size:24px;fill:#7a4f2e;letter-spacing:.1em}
+    </style>
+  </defs>
+  <text class="cap" x="165.0" y="42" text-anchor="middle">ウェイター</text>
+  <rect class="box" x="20" y="70" width="290" height="64" rx="2"/>
+  <text class="s" x="165.0" y="110.0" text-anchor="middle">注文を聞く</text>
+  <path class="ln" d="M165.0 134 V160 M157.0 152 L165.0 160 L173.0 152"/>
+  <rect class="box" x="20" y="164" width="290" height="86" rx="2"/>
+  <text class="s" x="165.0" y="200" text-anchor="middle">注文どおりに</text>
+  <text class="s" x="165.0" y="228" text-anchor="middle">そのまま出す</text>
+  <text class="cap" x="475.0" y="42" text-anchor="middle">ドクター</text>
+  <rect class="box" x="330" y="70" width="290" height="86" rx="2"/>
+  <text class="s" x="475.0" y="106" text-anchor="middle">「どうしましたか」と</text>
+  <text class="s" x="475.0" y="134" text-anchor="middle">話を聞く</text>
+  <path class="ln" d="M475.0 156 V182 M467.0 174 L475.0 182 L483.0 174"/>
+  <rect class="box" x="330" y="186" width="290" height="64" rx="2"/>
+  <text class="s" x="475.0" y="226.0" text-anchor="middle">診る</text>
+  <path class="ln" d="M475.0 250 V276 M467.0 268 L475.0 276 L483.0 268"/>
+  <rect class="box" x="330" y="280" width="290" height="64" rx="2"/>
+  <text class="s" x="475.0" y="320.0" text-anchor="middle">処方する</text>
+  <path class="ln" d="M475.0 344 V370 M467.0 362 L475.0 370 L483.0 362"/>
+  <rect class="box dash" x="330" y="374" width="290" height="86" rx="2"/>
+  <text class="s" x="475.0" y="410" text-anchor="middle">「それは要りません」と</text>
+  <text class="s" x="475.0" y="438" text-anchor="middle">言うこともある</text>
+  <path class="ln dash" d="M320.0 60 V470"/>
+</svg>
