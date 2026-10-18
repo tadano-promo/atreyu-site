@@ -363,11 +363,13 @@ main { padding-top: 60px; }
   color: var(--white);
   line-height: 1;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .trust-num small {
   font-size: 14px;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .trust-label {
