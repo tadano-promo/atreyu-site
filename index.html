@@ -155,6 +155,16 @@
   ]
 }
 </script>
+<style>
+.intro-movie{padding-bottom:24px}
+.intro-movie__frame{max-width:880px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;border-radius:4px;box-shadow:0 8px 30px rgba(45,26,8,0.12);background:#1a0f05}
+.intro-movie__play{display:block;position:relative;width:100%;height:100%;padding:0;border:0;cursor:pointer;background:none}
+.intro-movie__play img{width:100%;height:100%;object-fit:cover;display:block}
+.intro-movie__btn{position:absolute;right:14px;bottom:14px;width:52px;height:52px;border-radius:50%;background:rgba(42,26,10,0.72);border:1px solid rgba(240,232,216,0.6);transition:background .2s}
+.intro-movie__btn::after{content:"";position:absolute;left:20px;top:15px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent #f0e8d8}
+.intro-movie__play:hover .intro-movie__btn{background:rgba(184,137,90,0.9)}
+.intro-movie__frame iframe{width:100%;height:100%;border:0;display:block}
+</style>
 </head>
 <body>
 
@@ -251,6 +261,20 @@
       </div>
     </div>
   </div>
+
+  <!-- 紹介映像 -->
+  <section class="section intro-movie">
+    <div class="section-header">
+      <p class="section-eyebrow">Movie</p>
+      <h2 class="section-title">アトレイユ紹介映像</h2>
+    </div>
+    <div class="intro-movie__frame reveal">
+      <button type="button" class="intro-movie__play" data-yt="0hflOLAW7H8" aria-label="アトレイユ紹介映像を再生">
+        <img src="https://i.ytimg.com/vi/0hflOLAW7H8/hqdefault.jpg" alt="アトレイユ紹介映像" width="480" height="360" loading="lazy">
+        <span class="intro-movie__btn" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
 
   <!-- 事業紹介 -->
   <section class="section services" id="services">
@@ -442,5 +466,19 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+document.querySelectorAll('.intro-movie__play').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1';
+    f.title='アトレイユ紹介映像';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy='strict-origin-when-cross-origin';
+    f.allowFullscreen=true;
+    b.parentNode.replaceChild(f,b);
+  });
+});
+</script>
+
 </body>
 </html>
