@@ -597,7 +597,7 @@ img{max-width:100%;display:block}
 
 
     <div class="cta">
-      <a href="contact.html" class="btn">自分の商品で計算してもらう
+      <a href="contact.html" class="btn" id="calc-go">この数字で相談する
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <small>無料相談で、商品の価格と利益から一緒に計算します。</small>
     </div>
@@ -720,6 +720,12 @@ img{max-width:100%;display:block}
     od.innerHTML=fmt(Math.ceil(20000/unit))+'<small>個</small>';
   }
   p.addEventListener('input',calc); r.addEventListener('input',calc); calc();
+  var go=document.getElementById('calc-go');
+  if(go)go.addEventListener('click',function(){
+    var price=parseFloat(p.value)||0, rate=parseFloat(r.value)||0; if(price<=0||rate<=0)return;
+    var msg='【通販・便利グッズLPの計算】商品の価格 '+price.toLocaleString('ja-JP')+'円・利益 '+rate+'% → 1日 '+od.textContent+'売れれば元が取れる計算でした。';
+    try{sessionStorage.setItem('atreyu_prefill',JSON.stringify({cat:'通販・便利グッズ TikTok運用について',msg:msg}));}catch(e){}
+  });
 })();
 </script>
 </body>

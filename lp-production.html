@@ -226,6 +226,12 @@ strong{color:var(--cream);font-weight:500}
 .cta p{max-width:560px;margin:0 auto}
 .foot{padding:28px 0 40px;text-align:center;font-size:12px;color:var(--cream-faint)}
 .foot a{border-bottom:1px solid var(--line);margin:0 8px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(20,16,11,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:16px;transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky p{font-size:12px;line-height:1.6;color:var(--cream-dim)}
+.sticky p b{display:block;color:var(--cream);font-weight:500;font-size:13px}
+.sticky .btn{margin-top:0;padding:12px 20px;font-size:13px;white-space:nowrap;flex-shrink:0}
+body{padding-bottom:80px}
 </style>
 </head>
 <body>
@@ -344,7 +350,7 @@ strong{color:var(--cream);font-weight:500}
   </div>
 </section>
 
-<section class="cta">
+<section class="cta" id="contact">
   <div class="wrap">
     <p class="eyebrow">Contact</p>
     <h2><span class="nw">まずは、</span><span class="nw">お話を聞かせてください。</span></h2>
@@ -358,5 +364,16 @@ strong{color:var(--cream);font-weight:500}
   <p style="margin-top:14px;font-size:11px;color:var(--cream-faint)">©Atreyu 2026</p>
 </footer>
 
+<div class="sticky" id="sticky">
+  <p><b>相見積もり・競合プレゼン歓迎</b>作品はパスワード付きでお送りします</p>
+  <a href="/contact.html" class="btn">相談する</a>
+</div>
+<script>
+(function(){
+  var st=document.getElementById('sticky'),hero=document.querySelector('.hero'),fin=document.getElementById('contact');
+  function upd(){var y=window.scrollY,h=hero.offsetHeight,f=fin.getBoundingClientRect().top;st.classList.toggle('on',y>h*0.8&&f>window.innerHeight*0.6);}
+  window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
 </body>
 </html>

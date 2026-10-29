@@ -190,6 +190,21 @@ img{max-width:100%;display:block}
 .why span{font-size:13px;color:var(--ink-2)}
 .tax{margin-top:12px;font-size:12px;color:var(--mute)}
 
+/* calculator */
+.calc{margin-top:22px;background:var(--ink);color:#fff;border-radius:20px;padding:24px 20px}
+.calc h3{font-weight:900;font-size:18px}
+.calc p.s{font-size:13px;color:#cfcac1;margin-top:6px}
+.calc__in{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.calc label{font-size:12px;font-weight:700;color:#cfcac1;display:block;line-height:1.6}
+.calc input{width:100%;margin-top:6px;font:inherit;font-weight:900;font-size:20px;padding:10px 12px;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--ink)}
+.calc__out{margin-top:20px;display:grid;gap:10px}
+.calc__out div{background:#262523;border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.calc__out span{font-size:13px;color:#cfcac1}
+.calc__out b{font-weight:900;font-size:28px;color:#f2a58f}
+.calc__out b small{font-size:14px;color:#fff;margin-left:2px}
+.calc .fine{font-size:11.5px;color:#9d988f;margin-top:12px;line-height:1.7}
+.calc .calc__btn{display:block;text-align:center;margin-top:16px}
+
 /* break-even */
 .be{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .be div{background:var(--white);border-radius:var(--r);border:1px solid var(--line);padding:20px 16px;text-align:center}
@@ -715,12 +730,22 @@ p,li,summary,h3{text-wrap:pretty}
       <div><small>客単価 10,000円<br>（カット＋パーマ等）</small><b><small>1日</small>2〜3<span>人</span></b></div>
     </div>
     <p class="be-month">※ 月25日営業・売上で計算した目安です（1ヶ月にすると、それぞれ約120人・約60人）</p>
+    <div class="calc" id="salon-calc">
+      <h3>あなたのサロンで計算してみる</h3>
+      <p class="s">客単価と営業日数を入れると、元が取れる<span class="nw">人数が出ます。</span></p>
+      <div class="calc__in">
+        <label>客単価（円）<input type="number" id="c-price" value="7000" min="1" inputmode="numeric"></label>
+        <label>月の営業日数（日）<input type="number" id="c-days" value="25" min="1" max="31" inputmode="numeric"></label>
+      </div>
+      <div class="calc__out">
+        <div><span>1ヶ月に必要な新しいお客さま</span><b id="o-month">86<small>人</small></b></div>
+        <div><span>1日あたり</span><b id="o-day">約3.4<small>人</small></b></div>
+      </div>
+      <p class="fine">※ 基本プラン（月60万円・税別）を客単価で割った目安です。2回目からのご来店は含めていません。</p>
+      <a href="contact.html" class="btn calc__btn" id="calc-go">この数字で相談する</a>
+    </div>
     <p class="lead">美容室は、一度来てくださったお客さまが<span class="em">また来てくださる商売</span>です。最初の月で回収しきれなくても、通ってくださるお客さまが毎月積み重なっていきます。</p>
     <div class="be-plus">新しく来てくださったお客さまが通い続けてくだされば、<b>2回目からのご来店は、そのまま売上の上乗せ</b>になります。</div>
-    <div class="mid">
-      <p><b>サロンの客単価で、計算してみませんか？</b><br>30分の無料相談で、あなたのサロンの数字で元が取れる人数をお出しします。</p>
-      <a href="contact.html" class="btn">自分のサロンで計算してもらう</a>
-    </div>
   </div>
 </section>
 
@@ -847,6 +872,26 @@ document.documentElement.classList.add('js');
   var st=document.getElementById('sticky'),hero=document.querySelector('.hero'),fin=document.getElementById('contact');
   function upd(){var y=window.scrollY,h=hero.offsetHeight,f=fin.getBoundingClientRect().top;st.classList.toggle('on',y>h*0.8&&f>window.innerHeight*0.6);}
   window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
+<script>
+(function(){
+  var p=document.getElementById('c-price'), d=document.getElementById('c-days');
+  var om=document.getElementById('o-month'), od=document.getElementById('o-day'), go=document.getElementById('calc-go');
+  var m=0,day=0;
+  function calc(){
+    var price=Math.max(0,parseFloat(p.value)||0), days=Math.min(31,Math.max(0,parseFloat(d.value)||0));
+    if(price<=0||days<=0){om.innerHTML='—';od.innerHTML='—';m=0;return;}
+    m=Math.ceil(600000/price); day=Math.round(m/days*10)/10;
+    om.innerHTML=m.toLocaleString('ja-JP')+'<small>人</small>';
+    od.innerHTML='約'+day+'<small>人</small>';
+  }
+  p.addEventListener('input',calc); d.addEventListener('input',calc); calc();
+  go.addEventListener('click',function(){
+    if(!m)return;
+    var msg='【美容室LPの計算】客単価 '+(parseFloat(p.value)||0).toLocaleString('ja-JP')+'円・月の営業日数 '+(parseFloat(d.value)||0)+'日 → 1ヶ月 '+m+'人（1日 約'+day+'人）で元が取れる計算でした。';
+    try{sessionStorage.setItem('atreyu_prefill',JSON.stringify({cat:'美容室専門 TikTok運用について',msg:msg}));}catch(e){}
+  });
 })();
 </script>
 </body>

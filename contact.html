@@ -194,5 +194,15 @@
   });
 })();
 </script>
+<script>
+(function(){
+  var d=null;
+  try{d=JSON.parse(sessionStorage.getItem('atreyu_prefill')||'null');sessionStorage.removeItem('atreyu_prefill');}catch(e){}
+  if(!d)return;
+  var sel=document.querySelector('.contact-form select[name="category"]'), ta=document.querySelector('.contact-form textarea[name="message"]');
+  if(sel&&d.cat){for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===d.cat){sel.selectedIndex=i;break;}}}
+  if(ta&&d.msg&&!ta.value){ta.value=d.msg+'\n\n';}
+})();
+</script>
 </body>
 </html>
