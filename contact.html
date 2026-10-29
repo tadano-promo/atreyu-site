@@ -194,5 +194,12 @@
   });
 })();
 </script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search),c=q.get('cat'),m=q.get('msg');
+  if(c){var s=document.querySelector('select[name=category]');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===c){s.selectedIndex=i;break;}}}}
+  if(m){var t=document.querySelector('textarea[name=message]');if(t&&!t.value){t.value=m.slice(0,300);}}
+})();
+</script>
 </body>
 </html>

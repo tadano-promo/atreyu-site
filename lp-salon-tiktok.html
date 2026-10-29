@@ -288,6 +288,15 @@ img{max-width:100%;display:block}
 .bridge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
 .perday{font-size:13px;color:var(--ink-2);padding:0 22px;margin-top:2px}
 .perday b{color:var(--accent);font-size:15px}
+.promise{margin-top:22px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px}
+.promise h4{font-size:15px;font-weight:700;margin-bottom:10px}
+.promise ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.promise li{position:relative;padding-left:22px;font-size:14px;line-height:1.75}
+.promise li:before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.promise .fine{margin-top:10px;font-size:12px;color:var(--mute);line-height:1.7}
+.be-in{margin-top:18px;text-align:center}
+.be-in label{display:inline-flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--ink-2)}
+.be-in input{width:200px;font:inherit;font-size:20px;font-weight:700;text-align:center;padding:10px 12px;border:1.5px solid var(--ink);border-radius:10px;background:var(--white)}
 .be-head{margin-top:26px;text-align:center;font-weight:700;font-size:14px;color:var(--ink-2)}
 .be b small{font-size:13px;font-weight:700;display:block;color:var(--mute);letter-spacing:.04em}
 .be-month{margin-top:12px;font-size:12px;color:var(--mute);text-align:center}
@@ -445,6 +454,22 @@ p,li,summary,h3{text-wrap:pretty}
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "ご契約は最低3ヶ月です。そのあとは1ヶ月ごとの更新なので、続けるかどうかを毎月決めていただけます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "動画の修正はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1本につき2回まで、無料で修正します。それ以上の修正や撮り直しが必要な場合は、事前にご相談します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "実績として紹介すると、安くなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。サロン名と動画を、アトレイユのホームページなどで実績として紹介させていただける場合、月額から5%（月30,000円）お引きします。どこまで出すかは、事前にご相談して決めます。"
       }
     }
   ]
@@ -687,6 +712,15 @@ p,li,summary,h3{text-wrap:pretty}
         <div><i>2</i><p><b>動画のストックがたまるから</b><span>はじめから付けておくと、第2段階に入るころには広告に使える動画がたまっています。あとから付けると、そこからのスタートになり、出遅れてしまいます。</span></p></div>
       </div>
     </div>
+    <div class="promise">
+      <h4>安心して始めていただくために</h4>
+      <ul>
+        <li><b>修正は、1本につき2回まで無料</b>です。</li>
+        <li><b>お問い合わせへのご返信は、3営業日以内</b>。代表から直接お返事します。</li>
+        <li><b>実績として紹介してよければ、月額から5%お引き</b>します（月30,000円引き）。</li>
+      </ul>
+      <p class="fine">※ 実績の紹介は、サロン名・動画のどこまでを出すかを、事前にご相談して決めます。</p>
+    </div>
     <p class="tax">※ 金額はすべて税別です。</p>
 
     <div class="limit">
@@ -709,17 +743,18 @@ p,li,summary,h3{text-wrap:pretty}
   <div class="wrap rv">
     <span class="label">BREAK-EVEN</span>
     <h2 class="h2">元を取るのに必要なのは、<br>1日 たった数人。</h2>
-    <p class="be-head">基本プラン（月60万円）の場合の<br>1日あたりの新しいお客さま</p>
+    <p class="be-head">基本プラン（月60万円）の場合に<br>必要な、新しいお客さまの数</p>
+    <div class="be-in"><label>サロンの客単価（円）<input type="number" id="be-price" value="5000" min="1" inputmode="numeric"></label></div>
     <div class="be">
-      <div><small>客単価 5,000円<br>（カットのみ）</small><b><small>1日</small>約5<span>人</span></b></div>
-      <div><small>客単価 10,000円<br>（カット＋パーマ等）</small><b><small>1日</small>2〜3<span>人</span></b></div>
+      <div><small>1日あたり</small><b id="be-day">約4.8<span>人</span></b></div>
+      <div><small>1ヶ月あたり</small><b id="be-mon">約120<span>人</span></b></div>
     </div>
-    <p class="be-month">※ 月25日営業・売上で計算した目安です（1ヶ月にすると、それぞれ約120人・約60人）</p>
+    <p class="be-month">※ 月25日営業・売上で計算した目安です（客単価5,000円なら1日約5人、10,000円なら1日2〜3人）</p>
     <p class="lead">美容室は、一度来てくださったお客さまが<span class="em">また来てくださる商売</span>です。最初の月で回収しきれなくても、通ってくださるお客さまが毎月積み重なっていきます。</p>
     <div class="be-plus">新しく来てくださったお客さまが通い続けてくだされば、<b>2回目からのご来店は、そのまま売上の上乗せ</b>になります。</div>
     <div class="mid">
-      <p><b>サロンの客単価で、計算してみませんか？</b><br>30分の無料相談で、あなたのサロンの数字で元が取れる人数をお出しします。</p>
-      <a href="contact.html" class="btn">自分のサロンで計算してもらう</a>
+      <p><b>計算した数字のまま、相談できます。</b><br>ボタンを押すと、入力した客単価がお問い合わせ欄に入ります。通ってくださるお客さまも含めた計算は、30分の無料相談でお出しします。</p>
+      <a href="contact.html" class="btn" id="be-cta">この数字で相談する</a>
     </div>
   </div>
 </section>
@@ -770,6 +805,8 @@ p,li,summary,h3{text-wrap:pretty}
       <details><summary>撮影は、お店を閉めないといけませんか？</summary><p>営業時間中・営業時間外・定休日など、サロンさまのご都合に合わせて撮影日を決めます。ほかのお客さまが映らないようにするなど、撮影で気をつけてほしいことも事前にお聞きします。</p></details>
       <details><summary>コメントへの返信は、どんな言葉づかいになりますか？</summary><p>ていねいに、少しくだけた感じで、など、サロンさまの雰囲気に合わせます。値引きの約束など「答えないでほしいこと」も、事前にお聞きしてから返信します。</p></details>
       <details><summary>途中でやめることはできますか？</summary><p>ご契約は最低3ヶ月です。そのあとは1ヶ月ごとの更新なので、続けるかどうかを毎月決めていただけます。</p></details>
+      <details><summary>動画の修正はできますか？</summary><p>1本につき2回まで、無料で修正します。それ以上の修正や撮り直しが必要な場合は、事前にご相談します。</p></details>
+      <details><summary>実績として紹介すると、安くなりますか？</summary><p>はい。サロン名と動画を、アトレイユのホームページなどで実績として紹介させていただける場合、月額から5%（月30,000円）お引きします。どこまで出すかは、事前にご相談して決めます。</p></details>
     </div>
   </div>
 </section>
@@ -847,6 +884,20 @@ document.documentElement.classList.add('js');
   var st=document.getElementById('sticky'),hero=document.querySelector('.hero'),fin=document.getElementById('contact');
   function upd(){var y=window.scrollY,h=hero.offsetHeight,f=fin.getBoundingClientRect().top;st.classList.toggle('on',y>h*0.8&&f>window.innerHeight*0.6);}
   window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
+<script>
+(function(){
+  var i=document.getElementById('be-price'),d=document.getElementById('be-day'),m=document.getElementById('be-mon'),a=document.getElementById('be-cta');
+  function f(n){return n.toLocaleString('ja-JP')}
+  function c(){
+    var p=Math.max(0,parseFloat(i.value)||0);
+    if(p<=0){d.innerHTML='—';m.innerHTML='—';return;}
+    var day=Math.round(600000/25/p*10)/10, mon=Math.ceil(600000/p);
+    d.innerHTML='約'+f(day)+'<span>人</span>'; m.innerHTML='約'+f(mon)+'<span>人</span>';
+    a.href='contact.html?cat='+encodeURIComponent('美容室専門 TikTok運用について')+'&msg='+encodeURIComponent('LPで計算しました：客単価'+f(p)+'円（1日あたり約'+f(day)+'人）。');
+  }
+  i.addEventListener('input',c); c();
 })();
 </script>
 </body>

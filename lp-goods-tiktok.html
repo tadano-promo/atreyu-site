@@ -290,6 +290,12 @@ img{max-width:100%;display:block}
 /* footer */
 .ft{padding:36px 0 28px;font-size:12px;color:var(--mute);text-align:center}
 .ft a{text-decoration:underline}
+.promise{margin-top:22px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px}
+.promise h4{font-size:15px;font-weight:700;margin-bottom:10px}
+.promise ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.promise li{position:relative;padding-left:22px;font-size:14px;line-height:1.75}
+.promise li:before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--pop)}
+.promise .fine{margin-top:10px;font-size:12px;color:var(--mute);line-height:1.7}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(20,20,20,.96);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:12px}
 .sticky p{color:#fff;font-size:12px;line-height:1.5;font-weight:700}
 .sticky p b{color:var(--pop)}
@@ -360,6 +366,22 @@ img{max-width:100%;display:block}
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "はい。1つの商品を、型を変えながらいろいろな角度で紹介することもできます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "動画の修正はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1本につき2回まで、無料で修正します。それ以上の修正や撮り直しが必要な場合は、事前にご相談します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "実績として紹介すると、安くなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。会社名・商品名と動画を、アトレイユのホームページなどで実績として紹介させていただける場合、月額から5%（月30,000円）お引きします。どこまで出すかは、事前にご相談して決めます。"
       }
     }
   ]
@@ -580,6 +602,15 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
+    <div class="promise">
+      <h4>安心して始めていただくために</h4>
+      <ul>
+        <li><b>修正は、1本につき2回まで無料</b>です。</li>
+        <li><b>お問い合わせへのご返信は、3営業日以内</b>。代表から直接お返事します。</li>
+        <li><b>実績として紹介してよければ、月額から5%お引き</b>します（月30,000円引き）。</li>
+      </ul>
+      <p class="fine">※ 実績の紹介は、会社名・商品名・動画のどこまでを出すかを、事前にご相談して決めます。</p>
+    </div>
     <div class="calc">
       <h3>1日に何個売れれば、元が取れる？</h3>
       <p class="s">お使いの商品で計算してみてください。</p>
@@ -597,7 +628,7 @@ img{max-width:100%;display:block}
 
 
     <div class="cta">
-      <a href="contact.html" class="btn">自分の商品で計算してもらう
+      <a href="contact.html" class="btn" id="c-cta">この数字で相談する
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <small>無料相談で、商品の価格と利益から一緒に計算します。</small>
     </div>
@@ -674,6 +705,8 @@ img{max-width:100%;display:block}
       <details><summary>TikTok Shopを使っていなくても大丈夫ですか？</summary><p>大丈夫です。自社の通販サイトや楽天・Amazonの商品ページへのリンクでつなぐこともできます。どの売り場に送るのがいいかも、無料相談で一緒に考えます。</p></details>
       <details><summary>送った商品は返してもらえますか？</summary><p>撮影後の商品の扱い（返送など）は、ご契約のときにご相談して決めます。</p></details>
       <details><summary>1つの商品だけでも頼めますか？</summary><p>はい。1つの商品を、型を変えながらいろいろな角度で紹介することもできます。</p></details>
+    <details><summary>動画の修正はできますか？</summary><p>1本につき2回まで、無料で修正します。それ以上の修正や撮り直しが必要な場合は、事前にご相談します。</p></details>
+      <details><summary>実績として紹介すると、安くなりますか？</summary><p>はい。会社名・商品名と動画を、アトレイユのホームページなどで実績として紹介させていただける場合、月額から5%（月30,000円）お引きします。どこまで出すかは、事前にご相談して決めます。</p></details>
     </div>
   </div>
 </section>
@@ -718,6 +751,7 @@ img{max-width:100%;display:block}
     ou.innerHTML=fmt(unit)+'<small>円</small>';
     ov.innerHTML=fmt(Math.ceil(75000/unit))+'<small>個</small>';
     od.innerHTML=fmt(Math.ceil(20000/unit))+'<small>個</small>';
+    document.getElementById('c-cta').href='contact.html?cat='+encodeURIComponent('通販・便利グッズ TikTok運用について')+'&msg='+encodeURIComponent('LPで計算しました：商品の価格'+fmt(price)+'円・利益'+rate+'%（1日あたり'+fmt(Math.ceil(20000/unit))+'個）。');
   }
   p.addEventListener('input',calc); r.addEventListener('input',calc); calc();
 })();
