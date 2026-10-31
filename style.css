@@ -1324,3 +1324,6 @@ main { padding-top: 60px; }
 .kc__n{margin-top:10px;font-size:11px;line-height:1.7;opacity:.7}
 .kc__stats strong{font-family:var(--font-serif-en);font-weight:400}
 .kc__t{color:var(--text-mid)}
+.case-stats--3{grid-template-columns:repeat(3,1fr)}
+.case-stats--3 span{line-height:1.5}
+@media (max-width:420px){.case-stats--3{grid-template-columns:repeat(3,1fr)}.case-stats--3 b{font-size:18px}}
