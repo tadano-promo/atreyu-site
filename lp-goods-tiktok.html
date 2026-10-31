@@ -228,6 +228,23 @@ img{max-width:100%;display:block}
 .incl ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .incl li{font-size:13px;font-weight:700;background:var(--pop-soft);border:1.5px solid var(--ink);border-radius:999px;padding:3px 12px}
 
+
+/* 焼肉店さまの事例（小） */
+.yk{margin-top:16px;padding-top:14px;border-top:1px solid rgba(128,128,128,.25)}
+.yk__row{display:grid;grid-template-columns:7.2em 1fr 5.2em;align-items:center;gap:8px;font-size:12px;margin-top:8px;white-space:nowrap}
+.yk__row span{opacity:.75}
+.yk__row i{display:block;height:10px;border-radius:999px;background:rgba(128,128,128,.18);overflow:hidden}
+.yk__row em{display:block;height:100%;border-radius:999px;background:var(--yk)}
+.yk .yk__row b{display:block;text-align:right;font-size:13px;line-height:1.4;margin:0;font-weight:700;color:inherit}
+.yk .yk__row b span{font-size:inherit}
+.yk__x{margin-top:10px;font-size:13px}
+.yk__x strong{font-size:22px;color:var(--yk);margin-left:4px}
+.yk__stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.yk__stats div{background:rgba(128,128,128,.10);border-radius:8px;padding:8px 2px;text-align:center;font-size:11px;line-height:1.5}
+.yk__stats strong{display:block;font-size:16px;color:var(--yk)}
+.yk__note{margin-top:8px;font-size:11px;opacity:.7;line-height:1.6}
+@media (max-width:380px){.yk__stats{grid-template-columns:repeat(2,1fr)}}
+.res__card{--yk:var(--pop)}
 /* calculator */
 .calc{margin-top:28px;background:var(--ink);color:#fff;border-radius:20px;padding:24px 20px}
 .calc h3{font-weight:900;font-size:18px}
@@ -566,7 +583,13 @@ img{max-width:100%;display:block}
     <h2 class="h2"><span class="nw">1本だけ当たるより、</span><span class="nw">毎回きちんと届くこと。</span></h2>
     <div class="res">
       <div class="res__card"><div class="k">1本ごとの再生数</div><div class="v">2万〜5万<small>回</small></div><p>担当してきた物販・美容サロン・ネイルサロン・飲食店のTikTokで、1本あたり2万〜5万回の再生を、続けて出してきました。</p><div class="tags"><span>物販</span><span>美容サロン</span><span>ネイルサロン</span><span>飲食店</span></div></div>
-      <div class="res__card"><div class="k">いちばん伸びた動画</div><div class="v">339万<small>回再生</small></div><p>飲食店のお客さまのアカウントで、ファンを増やして知ってもらうための動画。企画・編集を担当しました。</p></div>
+      <div class="res__card"><div class="k">いちばん伸びた動画</div><div class="v">339万<small>回再生</small></div><p>飲食店のお客さまのアカウントで、ファンを増やして知ってもらうための動画。企画・編集を担当しました。</p><div class="yk">
+          <div class="yk__row"><span>はじめのころ</span><i><em style="width:0.2%;min-width:4px;opacity:.55"></em></i><b>約6,500回</b></div>
+          <div class="yk__row"><span>いちばん伸びた</span><i><em style="width:100%"></em></i><b>339万回</b></div>
+          <p class="yk__x">はじめのころの<strong>約520倍</strong></p>
+          <div class="yk__stats"><div><strong>9.1万</strong>いいね</div><div><strong>7,347</strong>保存</div><div><strong>2,892</strong>シェア</div><div><strong>643</strong>コメント</div></div>
+          <p class="yk__note"><span class="nw">※ はじめのころ＝</span><span class="nw">アカウント初期の動画12本の平均。</span></p>
+        </div></div>
     </div>
     <p class="lead">月8本なら、1ヶ月で<span class="mk">16万〜40万回</span>、商品を見てもらえる計算です。たまたまの1本ではなく、毎回届くつくり方があるから、「知っている人」が積み重なっていきます。</p>
     <p class="note" style="color:#9d988f">※ これまでの実績をもとにした目安です。再生数や売上をお約束するものではありません。</p>
