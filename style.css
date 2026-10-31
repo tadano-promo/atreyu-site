@@ -1307,3 +1307,20 @@ main { padding-top: 60px; }
 .case-stats b small{font-family:var(--font-sans);font-size:11px;margin-left:1px}
 .case-stats span{display:block;font-size:11px;color:var(--text-light);margin-top:4px}
 @media (max-width:420px){.case-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* 生活雑貨メーカーさまの事例グラフ */
+.kc{margin-top:18px}
+.kc__t{font-size:13px;font-weight:700;opacity:.85}
+.kc__chart{display:flex;align-items:flex-end;gap:5px;height:150px;margin-top:12px;padding-top:18px;border-bottom:1px solid rgba(128,128,128,.35)}
+.kc__b{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.kc__b i{display:block;width:100%;border-radius:4px 4px 0 0;background:var(--kc);opacity:.35}
+.kc__b:nth-child(-n+2) i{opacity:1}
+.kc__v{font-size:9.5px;white-space:nowrap;margin-bottom:3px;opacity:.75;letter-spacing:-.02em}
+.kc__b:nth-child(n+6) .kc__v{display:none}
+.kc__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+.kc__stats div{background:rgba(128,128,128,.10);border-radius:8px;padding:10px 4px;text-align:center;font-size:11px;line-height:1.5}
+.kc__stats strong{display:block;font-size:22px;line-height:1.2;color:var(--kc)}
+.kc__stats small{font-size:11px;margin-left:1px}
+.kc__n{margin-top:10px;font-size:11px;line-height:1.7;opacity:.7}
+.kc__stats strong{font-family:var(--font-serif-en);font-weight:400}
+.kc__t{color:var(--text-mid)}

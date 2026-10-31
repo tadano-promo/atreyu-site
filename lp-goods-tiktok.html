@@ -245,6 +245,22 @@ img{max-width:100%;display:block}
 .yk__note{margin-top:8px;font-size:11px;opacity:.7;line-height:1.6}
 @media (max-width:380px){.yk__stats{grid-template-columns:repeat(2,1fr)}}
 .res__card{--yk:var(--pop)}
+
+/* 生活雑貨メーカーさまの事例グラフ */
+.kc{margin-top:18px}
+.kc__t{font-size:13px;font-weight:700;opacity:.85}
+.kc__chart{display:flex;align-items:flex-end;gap:5px;height:150px;margin-top:12px;padding-top:18px;border-bottom:1px solid rgba(128,128,128,.35)}
+.kc__b{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.kc__b i{display:block;width:100%;border-radius:4px 4px 0 0;background:var(--kc);opacity:.35}
+.kc__b:nth-child(-n+2) i{opacity:1}
+.kc__v{font-size:9.5px;white-space:nowrap;margin-bottom:3px;opacity:.75;letter-spacing:-.02em}
+.kc__b:nth-child(n+6) .kc__v{display:none}
+.kc__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}
+.kc__stats div{background:rgba(128,128,128,.10);border-radius:8px;padding:10px 4px;text-align:center;font-size:11px;line-height:1.5}
+.kc__stats strong{display:block;font-size:22px;line-height:1.2;color:var(--kc)}
+.kc__stats small{font-size:11px;margin-left:1px}
+.kc__n{margin-top:10px;font-size:11px;line-height:1.7;opacity:.7}
+.case{--kc:var(--ink)}
 /* calculator */
 .calc{margin-top:28px;background:var(--ink);color:#fff;border-radius:20px;padding:24px 20px}
 .calc h3{font-weight:900;font-size:18px}
@@ -554,6 +570,12 @@ img{max-width:100%;display:block}
           <dt>動画の型</dt><dd>冒頭に商品名と「何がうれしいか」を出し、手元で実際に使って見せる</dd>
         </dl>
         <p class="note">※ 上の画面はイメージです。お取引先さまのお名前は伏せています。</p>
+        <div class="kc">
+          <p class="kc__t"><span class="nw">ゼロから立ち上げたアカウントの、</span><span class="nw">1本ごとの再生数</span></p>
+          <div class="kc__chart" role="img" aria-label="動画11本の再生数。いちばん多い動画は11万回、10万回をこえた動画が2本、1万回をこえた動画が5本。"><div class="kc__b"><span class="kc__v">11万</span><i style="height:100.0%"></i></div><div class="kc__b"><span class="kc__v">10.6万</span><i style="height:96.4%"></i></div><div class="kc__b"><span class="kc__v">6.6万</span><i style="height:60.0%"></i></div><div class="kc__b"><span class="kc__v">2.6万</span><i style="height:23.6%"></i></div><div class="kc__b"><span class="kc__v">1.5万</span><i style="height:13.6%"></i></div><div class="kc__b"><span class="kc__v">7,489</span><i style="height:6.8%"></i></div><div class="kc__b"><span class="kc__v">4,563</span><i style="height:4.1%"></i></div><div class="kc__b"><span class="kc__v">4,183</span><i style="height:3.8%"></i></div><div class="kc__b"><span class="kc__v">1,241</span><i style="height:1.5%"></i></div><div class="kc__b"><span class="kc__v">740</span><i style="height:1.5%"></i></div><div class="kc__b"><span class="kc__v">196</span><i style="height:1.5%"></i></div></div>
+          <div class="kc__stats"><div><strong>11<small>万回</small></strong>いちばん<br>伸びた動画</div><div><strong>2<small>本</small></strong>10万回を<br>こえた動画</div><div><strong>5<small>本</small></strong>1万回を<br>こえた動画</div></div>
+          <p class="kc__n">※ フォロワー0人から始めた新しいアカウントで、投稿した動画のうち11本の再生数を多い順に並べています。結果をお約束するものではありません。</p>
+        </div>
       </div>
     </div>
   </div>
