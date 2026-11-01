@@ -1359,3 +1359,4 @@ main { padding-top: 60px; }
 .kc__big{font-family:var(--font-serif-en);font-weight:400}
 
 .kc__avgbox{margin-top:12px;padding:20px 16px;border-radius:10px;background:rgba(128,128,128,.10);text-align:center}.kc__avgbox .kc__big{margin-top:0;font-size:44px}.kc__calc{margin-top:8px;font-size:12px;line-height:1.8;opacity:.8}
+.case-stats--2{grid-template-columns:repeat(2,1fr)!important}
