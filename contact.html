@@ -189,7 +189,17 @@
     var btn = form.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = '送信中…'; }
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
-      .then(function (r) { if (r.ok) { location.href = '/thanks.html'; } else { throw new Error('ng'); } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('ng');
+        // 問い合わせが届いたことを Google アナリティクスに「キーイベント」として知らせる（名前・メール・本文は送らない）
+        var go = function () { location.href = '/thanks.html'; };
+        if (typeof window.gtag === 'function') {
+          var sel = form.querySelector('select[name="category"]');
+          var done = false, next = function () { if (!done) { done = true; go(); } };
+          window.gtag('event', 'generate_lead', { lead_source: 'contact_form', form_category: (sel && sel.value) || '未選択', event_callback: next, transport_type: 'beacon' });
+          setTimeout(next, 1200);
+        } else { go(); }
+      })
       .catch(function () { if (btn) { btn.disabled = false; btn.textContent = '送信する'; } form.removeEventListener('submit', arguments.callee); form.submit(); });
   });
 })();
