@@ -454,12 +454,12 @@ small{font-size:.62em}
       <p class="calc__rate" id="c-rate-note">為替を読み込んでいます…</p>
       <div class="calc__in">
         <label>客単価<input id="c-price" type="number" inputmode="decimal" value="90" min="0" step="any"></label>
-        <label>利益率（%）<input id="c-rate" type="number" inputmode="numeric" value="50" min="1" max="100"></label>
+        <label>利益率（%）<input id="c-rate" type="number" inputmode="numeric" value="40" min="1" max="100"></label>
         <label>1か月にふえる新しいお客さま（人）<input id="c-up" type="number" inputmode="numeric" value="10" min="0" max="500"></label>
         <label>通い続けてくれる割合（%）<input id="c-keep" type="number" inputmode="numeric" value="30" min="0" max="100"></label>
         <label>通う方の年の来店回数<input id="c-visit" type="number" inputmode="decimal" value="4" min="1" max="52" step="0.5"></label>
       </div>
-      <p class="calc__hint">最初の数字は、客単価80ユーロのお店の例です（選んだ通貨に合わせて、今の為替で直しています）。利益率は、材料費や歩合など、お客さまが1人ふえるごとにかかるお金を引いて残る割合です。</p>
+      <p class="calc__hint">最初の数字は、客単価80ユーロのお店の例です（選んだ通貨に合わせて、今の為替で直しています）。利益率は、材料費・食材費や歩合など、お客さまが1人ふえるごとにかかるお金を引いて残る割合です（最初は40%で入れています）。</p>
 
       <div class="calc__main"><span>1年で、お店に残る利益（費用とボーナスを引いたあと）</span><b id="o-net">—</b><span class="sub" id="o-net-jpy"></span></div>
       <div class="calc__brk">
@@ -578,7 +578,7 @@ document.documentElement.classList.add('js');
     var p=v('c-price')/R[cur];
     Object.keys(R).forEach(function(k){if(d.rates[k])R[k]=d.rates[k];});
     var t=new Date((d.time_last_update_unix||0)*1000);
-    if(!isNaN(t))RDATE=(t.getMonth()+1)+'月'+t.getDate()+'日';
+    if(!isNaN(t))RDATE=t.getFullYear()+'年'+(t.getMonth()+1)+'月'+t.getDate()+'日';
     var np=p*R[cur];$('c-price').value=(cur==='JPY'||cur==='KRW')?Math.round(np/10)*10:Math.round(np*10)/10;
     fx();calc();
   }).catch(function(){});
