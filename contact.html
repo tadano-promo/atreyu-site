@@ -11,6 +11,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  try{var lpv=sessionStorage.getItem('atreyu_lp_variant');if(lpv)gtag('set',{lp_variant:lpv});}catch(e){}
   gtag('config', 'G-LFH7Z4EGW8');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
