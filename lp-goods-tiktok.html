@@ -19,13 +19,21 @@
 <meta property="og:image" content="https://atreyu.jp/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
+<script>
+(function(){var k='atreyu_ab_goods',v=null,q=location.search.match(/[?&]v=([ab])(&|$)/i);
+try{v=q?q[1].toLowerCase():localStorage.getItem(k);}catch(e){}
+if(v!=='a'&&v!=='b'){v=Math.random()<0.5?'a':'b';}
+try{localStorage.setItem(k,v);sessionStorage.setItem('atreyu_lp_variant','goods_'+v);}catch(e){}
+document.documentElement.setAttribute('data-v',v);window.LP_VARIANT='goods_'+v;})();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFH7Z4EGW8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-LFH7Z4EGW8');
+  gtag('set', {lp_variant: window.LP_VARIANT});
+  gtag('config', 'G-LFH7Z4EGW8', {lp_variant: window.LP_VARIANT});
 </script>
 
 <script type="application/ld+json">
@@ -399,6 +407,50 @@ body{letter-spacing:.03em}
 .res__big b{font-size:72px;letter-spacing:-.03em}
 .hcard__tbl td{font-size:14px}
 @media (max-width:360px){.hcard__n{font-size:50px}.calc__main b{font-size:56px}}
+
+/* ===== A/Bテスト ===== */
+html:not([data-v="b"]) .vb{display:none!important}
+html[data-v="b"] .va{display:none!important}
+main{display:flex;flex-direction:column}
+html[data-v="b"] .s-heroB{order:1}
+html[data-v="b"] .s-idea{order:2}
+html[data-v="b"] .s-results{order:3}
+html[data-v="b"] .s-problem{order:4}
+html[data-v="b"] .s-service{order:5}
+html[data-v="b"] .s-profit{order:6}
+html[data-v="b"] .s-compare{order:7}
+html[data-v="b"] .s-reason{order:8}
+html[data-v="b"] .s-price{order:9}
+html[data-v="b"] .s-limit{order:10}
+html[data-v="b"] .s-flow{order:11}
+html[data-v="b"] .s-faq{order:12}
+html[data-v="b"] .s-final{order:13}
+/* Bの入口 */
+.heroB{position:relative;padding:84px 0 44px;background:radial-gradient(120% 70% at 85% 10%,#ffd8bf 0%,transparent 55%),var(--bg);overflow:hidden}
+.heroB h1{font-size:clamp(28px,8vw,46px);font-weight:900;line-height:1.4;color:var(--ink)}
+.heroB h1 em{font-style:normal;color:var(--ac);background:linear-gradient(transparent 62%,rgba(58,214,181,.45) 62%)}
+.heroB__lead{margin-top:14px;font-size:14px;color:var(--ink2)}
+.heroB__vis{position:relative;height:400px;margin:26px auto 22px;max-width:360px}
+.heroB__ph{position:absolute;left:50%;top:0;transform:translateX(-50%) rotate(-3deg);width:200px;height:380px;border-radius:28px;border:7px solid var(--ink);background:#000 center/cover;box-shadow:0 26px 50px rgba(22,33,62,.3);overflow:hidden}
+.heroB__ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6))}
+.heroB__cap{position:absolute;z-index:1;left:12px;right:12px;bottom:16px;font-size:13px!important;color:#fff;font-weight:900;font-size:14px;line-height:1.5}
+.heroB__like{position:absolute;z-index:1;right:10px;top:12px;color:#fff;font-weight:900;font-size:12px;background:rgba(0,0,0,.35);padding:2px 8px;border-radius:999px}
+.cm{position:absolute;z-index:2;background:#fff;color:var(--ink);font-weight:800;font-size:12.5px;padding:8px 13px;border-radius:16px;box-shadow:0 8px 20px rgba(22,33,62,.15);white-space:nowrap;animation:bob 4.5s ease-in-out infinite}
+.cm::before{content:'';display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--yl);vertical-align:-4px;margin-right:6px}
+.cm--1{left:0;top:40px;border:2px solid var(--ac)}
+.cm--2{right:0;top:130px;animation-delay:.6s}
+.cm--3{left:0;top:215px;animation-delay:1.2s}
+.cm--4{right:0;top:285px;animation-delay:1.8s}
+.cm--2::before{background:#ffb27a}.cm--4::before{background:#c9d2ff}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.cm{animation:none}}
+.heroB__nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
+.heroB__nums div{background:#fff;border:2px solid var(--line);border-radius:14px;text-align:center;padding:12px 4px;font-size:10.5px;font-weight:700;color:var(--ink2);line-height:1.5}
+.heroB__nums b{display:block;font-family:var(--num);font-size:26px;font-weight:900;color:var(--ink);line-height:1.15}
+.heroB__nums b small{font-family:var(--sans);font-size:11px}
+.heroB .hero__tag span{background:var(--ink);color:#fff}
+.heroB .hero__tag span:first-child{background:var(--ac)}
+.heroB .fine{text-align:center}
 </style>
 <script type="application/ld+json">
 {
@@ -519,8 +571,33 @@ body{letter-spacing:.03em}
 </header>
 
 <main>
+<section class="heroB vb s-heroB">
+  <div class="wrap">
+    <p class="hero__tag"><span>通販・生活雑貨メーカー様へ</span><span>全国</span><span>商品を送るだけ</span></p>
+    <h1><span class="nw">「これ、どこで</span><span class="nw">買えますか？」</span><br><span class="nw">そのコメントが、</span><br><span class="nw"><em>売上</em>になる。</span></h1>
+    <p class="heroB__lead">使っているところを見た瞬間、人は欲しくなります。商品を送るだけで、企画・撮影・編集・投稿・コメント返信まで。</p>
+    <div class="heroB__vis" aria-hidden="true">
+      <div class="heroB__ph" style="background-image:url(img/lp/goods-2.jpg)">
+        <span class="heroB__cap">「泡立て器、まだ<br>手で回してます？」</span>
+        <span class="heroB__like">♥ 2.4万</span>
+      </div>
+      <span class="cm cm--1">これどこで買えますか？</span>
+      <span class="cm cm--2">欲しい…！リンクください</span>
+      <span class="cm cm--3">洗えるのいいな</span>
+      <span class="cm cm--4">母にも買いました</span>
+    </div>
+    <div class="heroB__nums">
+      <div><b>3.1<small>万回</small></b>新規アカウントの<br>1本平均</div>
+      <div><b>2–5<small>万回</small></b>担当してきた<br>1本ごとの再生</div>
+      <div><b>0<small>日</small></b>撮影の<br>立ち会い</div>
+    </div>
+    <a href="contact.html" class="btn" data-cta-area="heroB">30分の無料相談を申し込む</a>
+    <p class="btn-note">オンラインで完結 ／ 初期費用0円</p>
+    <p class="fine">※ 画面とコメントはイメージです。数字はこれまでの実績で、結果をお約束するものではありません。</p>
+  </div>
+</section>
 
-<section class="hero">
+<section class="va s-heroA hero">
   <div class="hero__img hero__img--goods" role="img" aria-label="キッチン用品（イメージ）"></div>
   <div class="hero__in">
     <p class="hero__tag"><span>通販・生活雑貨メーカー様へ</span><span>全国</span><span>商品を送るだけ</span><span>初期費用0円</span></p>
@@ -546,7 +623,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec sec--profit" id="profit">
+<section class="s-profit sec sec--profit" id="profit">
   <div class="wrap">
     <div class="head rv"><span class="head__en">Profit</span><h2>御社の商品だと、<br>いくら残る？</h2><p>商品の値段と利益、もう一度買ってくださる方の割合から、アトレイユの費用を引いて計算します。</p></div>
     <div class="calc rv" id="calc">
@@ -577,7 +654,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec">
+<section class="s-problem sec">
   <span class="ghost" aria-hidden="true">Problem</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Problem</span><h2>こんなお悩み、<br>ありませんか。</h2></div>
@@ -599,7 +676,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec sec--2">
+<section class="s-service sec sec--2">
   <span class="ghost" aria-hidden="true">Service</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Service</span><h2>商品を送るだけ。<br>あとは、ぜんぶお任せ。</h2><p>撮影はアトレイユで行い、手元の使い方を中心に撮ります。来社や撮影の立ち会いは要らないので、全国どこからでもお申し込みいただけます。</p></div>
@@ -615,7 +692,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec" id="results">
+<section class="s-results sec" id="results">
   <span class="ghost" aria-hidden="true">Results</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Results</span><h2>1本だけ当たるより、<br>毎回きちんと届くこと。</h2><p>これまで担当してきたアカウントの数字です。</p></div>
@@ -657,7 +734,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec sec--2">
+<section class="s-idea sec sec--2">
   <span class="ghost" aria-hidden="true">Idea</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Idea</span><h2>「使って見せる」<br>3つの型</h2><p>最初の1〜2秒で手が止まらないと、動画は見てもらえません。たとえば、キッチンバサミ（約20秒）ならこんな流れです。</p></div>
@@ -672,7 +749,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec">
+<section class="s-compare sec">
   <span class="ghost" aria-hidden="true">Compare</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Compare</span><h2>ほかのやり方と、<br>比べてみてください。</h2></div>
@@ -689,7 +766,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec sec--2">
+<section class="s-reason sec sec--2">
   <span class="ghost" aria-hidden="true">Reason</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Reason</span><h2>アトレイユが<br>選ばれる3つの理由</h2></div>
@@ -701,7 +778,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec" id="price">
+<section class="s-price sec" id="price">
   <span class="ghost" aria-hidden="true">Plan</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Plan &amp; Price</span><h2>はじめに育てて、<br>あとは軽く回し続ける。</h2><p>ずっと同じ金額ではありません。はじめの6ヶ月で動画をためてアカウントを育て、7ヶ月目からは、たまった動画やインフルエンサーさんの動画を広告で回す形に切りかえます。</p></div>
@@ -740,7 +817,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec sec--2" style="padding:72px 0">
+<section class="s-limit sec sec--2" style="padding:72px 0">
   <div class="wrap">
     <div class="limit rv">
       <p class="limit__n">10<small>社まで</small></p>
@@ -750,7 +827,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec">
+<section class="s-flow sec">
   <span class="ghost" aria-hidden="true">Flow</span>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Flow</span><h2>始めるまでの流れ</h2></div>
@@ -765,7 +842,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec sec--2">
+<section class="s-faq sec sec--2">
   <span class="ghost" aria-hidden="true">FAQ</span>
   <div class="wrap faq">
     <div class="head rv"><span class="head__en">FAQ</span><h2>よくあるご質問</h2></div>
@@ -784,7 +861,7 @@ body{letter-spacing:.03em}
   </div>
 </section>
 
-<section class="sec final final--goods" id="contact">
+<section class="s-final sec final final--goods" id="contact">
   <div class="final__img" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head rv"><span class="head__en">Contact</span><h2>まずは30分、<br>商品のお話を<span class="nw">聞かせてください。</span></h2><p>無料相談で、この3つがわかります。</p></div>
@@ -802,7 +879,7 @@ body{letter-spacing:.03em}
 <footer class="ft">運営：<a href="https://atreyu.jp/">Atreyu（アトレイユ）</a>　|　<a href="policy.html">プライバシーポリシー</a><br>©Atreyu 2026</footer>
 
 <div class="sticky" id="sticky">
-  <p><b>1日10個で、1年目 ＋750万円</b>御社の商品で計算できます</p>
+  <p class="va"><b>1日10個で、1年目 ＋750万円</b>御社の商品で計算できます</p><p class="vb"><b>商品を送るだけ・初期費用0円</b>30分の無料相談はこちら</p>
   <a href="contact.html" data-cta-area="sticky">無料相談</a>
 </div>
 
@@ -813,7 +890,7 @@ document.documentElement.classList.add('js');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
   els.forEach(function(e){io.observe(e)});
-  var st=document.getElementById('sticky'),hero=document.querySelector('.hero'),fin=document.getElementById('contact');
+  var st=document.getElementById('sticky'),hero=document.querySelector(document.documentElement.getAttribute('data-v')==='b'?'.heroB':'.hero'),fin=document.getElementById('contact');
   function upd(){var y=window.scrollY,h=hero.offsetHeight,f=fin.getBoundingClientRect().top;st.classList.toggle('on',y>h*0.8&&f>window.innerHeight*0.6);}
   window.addEventListener('scroll',upd,{passive:true});upd();
 })();
