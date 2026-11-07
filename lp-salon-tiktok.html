@@ -68,7 +68,7 @@ button{font-family:inherit}
 .sec{padding:80px 0;position:relative;overflow:hidden}
 .sec--2{background:var(--bg2)}
 .head{position:relative;margin-bottom:36px;text-align:center}
-.head__en{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:900;letter-spacing:.12em;color:#fff;background:var(--ink);padding:3px 14px;transform:skewX(-10deg);margin-bottom:16px}
+.head__en{display:inline-block;font-family:var(--num);font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--ink);padding:3px 14px;transform:skewX(-10deg);margin-bottom:16px}
 .head h2{font-size:clamp(24px,6.6vw,34px);font-weight:900;line-height:1.5;letter-spacing:.02em}
 .head p{margin-top:14px;color:var(--ink2);font-size:14.5px;text-align:left}
 .ghost{position:absolute;left:50%;transform:translateX(-50%);top:30px;font-family:var(--num);font-weight:600;font-size:clamp(64px,20vw,140px);line-height:1;color:rgba(239,47,107,.06);pointer-events:none;text-transform:uppercase;white-space:nowrap}
@@ -180,7 +180,7 @@ button{font-family:inherit}
 .sb__c{flex:none;width:58vw;max-width:210px;scroll-snap-align:start}
 .sb__ph{position:relative;aspect-ratio:9/16;background:#000 center/cover;border-radius:16px;overflow:hidden;border:5px solid var(--ink)}
 .sb__ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.7))}
-.sb__no{position:absolute;z-index:1;top:10px;left:10px;font-family:var(--sans);font-weight:900;font-weight:600;color:#fff;background:var(--ac);font-size:12px;padding:1px 9px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.sb__no{position:absolute;z-index:1;top:10px;left:10px;font-family:var(--num);font-weight:600;color:#fff;background:var(--ac);font-size:12px;padding:1px 9px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
 .sb__ph .sb__tele{margin:0;position:absolute;z-index:1;left:10px;right:10px;bottom:14px;color:#fff;font-weight:900;font-size:13px;line-height:1.55;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .sb__c p{font-size:12.5px;color:var(--ink2);margin-top:10px;line-height:1.7}
 .sb__c p b{display:block;color:var(--ink);font-size:14px;font-weight:900}
@@ -210,7 +210,7 @@ button{font-family:inherit}
 .stg{display:grid;margin-bottom:12px}
 .stg__c{background:#fff;border:2px solid var(--line);border-radius:16px;padding:24px 18px 20px}
 .stg__c--2{border-color:var(--ac);box-shadow:0 10px 26px rgba(239,47,107,.14)}
-.stg__no{display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-weight:900;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.stg__no{display:flex;justify-content:space-between;align-items:center;font-family:var(--num);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
 .stg__no::first-letter{color:var(--ac)}
 .stg__no span{font-family:var(--sans);font-size:12px;font-weight:900;color:#fff;background:var(--ink);padding:2px 10px;border-radius:999px;letter-spacing:.04em;text-transform:none}
 .stg__c--2 .stg__no span{background:var(--ac)}
@@ -421,7 +421,7 @@ button{font-family:inherit}
 
 <header class="hd" id="hd">
   <div class="wrap">
-    <a href="https://atreyu.jp/" class="brand">Atreyu<small>美容室向け</small></a>
+    <a href="https://atreyu.jp/" class="brand">Atreyu<small>FOR SALONS</small></a>
     <a href="contact.html" class="hd__btn" data-cta-area="header">無料相談</a>
   </div>
 </header>
@@ -457,7 +457,7 @@ button{font-family:inherit}
 
 <section class="sec sec--profit" id="profit">
   <div class="wrap">
-    <div class="head rv"><span class="head__en">あなたの利益</span><h2>御社の店舗数だと、<br>いくら残る？</h2><p>新しいお客さまの一部は、そのまま通ってくださいます。その1年分の利益から、アトレイユの費用を引いて計算します。</p></div>
+    <div class="head rv"><span class="head__en">Profit</span><h2>御社の店舗数だと、<br>いくら残る？</h2><p>新しいお客さまの一部は、そのまま通ってくださいます。その1年分の利益から、アトレイユの費用を引いて計算します。</p></div>
     <div class="calc rv" id="calc">
       <p class="calc__q">店舗数は？</p>
       <div class="chips" role="group" aria-label="店舗数" data-for="c-stores">
@@ -494,8 +494,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec">
+  <span class="ghost" aria-hidden="true">Problem</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">お悩み</span><h2>複数店舗ならではの、<br>こんなお悩みありませんか。</h2></div>
+    <div class="head rv"><span class="head__en">Problem</span><h2>複数店舗ならではの、<br>こんなお悩みありませんか。</h2></div>
     <ul class="worry rv">
       <li><span>01</span>新規のお客さまは、どの店舗もホットペッパー頼み</li>
       <li><span>02</span>掲載料が、店舗の数だけかかっている</li>
@@ -527,8 +528,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec sec--2">
+  <span class="ghost" aria-hidden="true">Service</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">やること</span><h2>面倒なことは、<br>ぜんぶお任せください。</h2><p>月8本。だいたい週に2本ずつ、サロンの動画が投稿されていきます。</p></div>
+    <div class="head rv"><span class="head__en">Service</span><h2>面倒なことは、<br>ぜんぶお任せください。</h2><p>月8本。だいたい週に2本ずつ、サロンの動画が投稿されていきます。</p></div>
     <div class="steps rv">
       <div><i>01</i><b>企画</b><small>サロンだけの<br>見せ方を考える</small></div>
       <div><i>02</i><b>撮影</b><small>サロンに伺い<br>1日で撮る</small></div>
@@ -542,8 +544,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec" id="account">
+  <span class="ghost" aria-hidden="true">Account</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">アカウント</span><h2>アカウントは、<br>店舗ごとに1つ。</h2><p>全店で使える共通の動画と、その店舗だけの動画を組み合わせて投稿します。ブランドで1つにまとめたい場合も、お受けできます。</p></div>
+    <div class="head rv"><span class="head__en">Account</span><h2>アカウントは、<br>店舗ごとに1つ。</h2><p>全店で使える共通の動画と、その店舗だけの動画を組み合わせて投稿します。ブランドで1つにまとめたい場合も、お受けできます。</p></div>
     <table class="tbl tbl--acc rv">
       <thead><tr><th></th><th class="us">店舗ごとに1つ<br><small>（基本）</small></th><th>ブランドで1つ</th></tr></thead>
       <tbody>
@@ -559,8 +562,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec" id="results">
+  <span class="ghost" aria-hidden="true">Results</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">実績</span><h2>1本だけ当たるより、<br>毎回きちんと届くこと。</h2><p>これまで担当してきたアカウントの数字です。</p></div>
+    <div class="head rv"><span class="head__en">Results</span><h2>1本だけ当たるより、<br>毎回きちんと届くこと。</h2><p>これまで担当してきたアカウントの数字です。</p></div>
 
     <div class="res rv">
       <p class="res__who">1店舗運営の美容サロン様</p>
@@ -604,22 +608,24 @@ button{font-family:inherit}
 </section>
 
 <section class="sec sec--2">
+  <span class="ghost" aria-hidden="true">Idea</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">企画の例</span><h2>たとえば、<br>あえて「断る」美容室。</h2><p>最初の2秒で、<span class="nw">見ている人の手を止める企画です。</span></p></div>
+    <div class="head rv"><span class="head__en">Idea</span><h2>たとえば、<br>あえて「断る」美容室。</h2><p>最初の2秒で、<span class="nw">見ている人の手を止める企画です。</span></p></div>
     <div class="sb rv">
-      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-cut.jpg)"><span class="sb__no">カット1</span><p class="sb__tele">「すみません、今日<br>その髪型には切れません」</p></div><p><b>はじまり</b>お客さまが見せた写真に、美容師が首を横にふる。</p></div>
-      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-blow.jpg)"><span class="sb__no">カット2</span><p class="sb__tele">「このまま切ると、明日から<br>まとまらなくなるんです」</p></div><p><b>理由</b>生え癖や毛の流れを見せる、手元のアップ。</p></div>
-      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-curl.jpg)"><span class="sb__no">カット3</span><p class="sb__tele">「骨格と毎日の暮らしに、<br>いちばん似合う形に」</p></div><p><b>提案と施術</b>骨格に合わせて、ていねいに仕上げる。</p></div>
-      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-finish.jpg)"><span class="sb__no">カット4</span><p class="sb__tele">「言われた通りに切らない。<br>それがプロの仕事」</p></div><p><b>仕上がり</b>まとまりのいいシルエット。</p></div>
+      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-cut.jpg)"><span class="sb__no">Cut 01</span><p class="sb__tele">「すみません、今日<br>その髪型には切れません」</p></div><p><b>はじまり</b>お客さまが見せた写真に、美容師が首を横にふる。</p></div>
+      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-blow.jpg)"><span class="sb__no">Cut 02</span><p class="sb__tele">「このまま切ると、明日から<br>まとまらなくなるんです」</p></div><p><b>理由</b>生え癖や毛の流れを見せる、手元のアップ。</p></div>
+      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-curl.jpg)"><span class="sb__no">Cut 03</span><p class="sb__tele">「骨格と毎日の暮らしに、<br>いちばん似合う形に」</p></div><p><b>提案と施術</b>骨格に合わせて、ていねいに仕上げる。</p></div>
+      <div class="sb__c"><div class="sb__ph" style="background-image:url(img/lp/salon-finish.jpg)"><span class="sb__no">Cut 04</span><p class="sb__tele">「言われた通りに切らない。<br>それがプロの仕事」</p></div><p><b>仕上がり</b>まとまりのいいシルエット。</p></div>
     </div>
-    <p class="swipe">← 横にスワイプして見る →</p>
+    <p class="swipe">Swipe →</p>
     <p class="quote rv">見終わったときに残るのは、<br>「この美容室は、髪のことを<span class="nw">本気で考えてくれる」</span>という信頼。<small>※ 写真はイメージです。「断る」は動画の中だけの演出で、ふだんの接客を変える必要はありません。</small></p>
   </div>
 </section>
 
 <section class="sec">
+  <span class="ghost" aria-hidden="true">Compare</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">比べてみる</span><h2>ほかの集客と、<br>比べてみてください。</h2></div>
+    <div class="head rv"><span class="head__en">Compare</span><h2>ほかの集客と、<br>比べてみてください。</h2></div>
     <table class="tbl rv">
       <thead><tr><th></th><th class="us">アトレイユ</th><th>自分たちで<br>運用</th><th>掲載型の<br>広告</th></tr></thead>
       <tbody>
@@ -634,8 +640,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec sec--2">
+  <span class="ghost" aria-hidden="true">Reason</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">選ばれる理由</span><h2>アトレイユが<br>選ばれる3つの理由</h2></div>
+    <div class="head rv"><span class="head__en">Reason</span><h2>アトレイユが<br>選ばれる3つの理由</h2></div>
     <div class="rs">
       <div class="r rv"><span class="r__n">01</span><div><h3>「売るため」ではなく、<br>「届けるため」の動画。</h3><p>「安くします」「今だけ」で押し出すと、サロンの良さがかすみます。まず知ってもらい、「いいな」と思ってもらう。その結果として、予約が入る順番でつくります。</p></div></div>
       <div class="r rv"><span class="r__n">02</span><div><h3>テレビCMの現場で、<br>10年つくってきた。</h3><p>テレビCM・WebCMを200本以上手がけてきたプロデューサーが、企画から担当します。最初の2秒で手を止める見せ方を、サロンごとに考えます。</p></div></div>
@@ -645,26 +652,27 @@ button{font-family:inherit}
 </section>
 
 <section class="sec" id="price">
+  <span class="ghost" aria-hidden="true">Plan</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">料金</span><h2>はじめに育てて、<br>あとは軽く回し続ける。</h2><p>ずっと同じ金額ではありません。はじめの6ヶ月で動画をためてアカウントを育て、7ヶ月目からは、たまった動画を広告で回す形に切りかえます。料金は会社ごとで、店舗数に合わせて決まります。</p></div>
+    <div class="head rv"><span class="head__en">Plan &amp; Price</span><h2>はじめに育てて、<br>あとは軽く回し続ける。</h2><p>ずっと同じ金額ではありません。はじめの6ヶ月で動画をためてアカウントを育て、7ヶ月目からは、たまった動画を広告で回す形に切りかえます。料金は会社ごとで、店舗数に合わせて決まります。</p></div>
 
     <div class="stg rv">
       <div class="stg__c">
-        <p class="stg__no">ステップ1<span>はじめの6ヶ月</span></p>
+        <p class="stg__no">Step 01<span>はじめの6ヶ月</span></p>
         <h3>動画をためて、<br>アカウントを育てる</h3>
         <p class="stg__p">600,000<small>円〜 / 月（税別）</small></p>
         <p class="stg__d">月8本の動画を企画・撮影・編集し、店舗ごとのアカウントに投稿。コメント返信まで行います。全店で使える動画と、店舗ごとの動画を組み合わせます。</p>
       </div>
       <div class="stg__arrow" aria-hidden="true"></div>
       <div class="stg__c stg__c--2">
-        <p class="stg__no">ステップ2<span>7ヶ月目から</span></p>
+        <p class="stg__no">Step 02<span>7ヶ月目から</span></p>
         <h3>たまった動画を、<br>広告で回し続ける</h3>
         <p class="stg__p">50,000<small>円〜 / 月（税別）</small><em>＋ 広告予算</em></p>
         <p class="stg__d">これまでの動画や、インフルエンサーさんに来ていただいた動画を広告で回し、アカウントの再生数を保ちます。広告予算の金額は、御社で決められます。</p>
       </div>
     </div>
     <table class="tbl tbl--tier rv">
-      <thead><tr><th>店舗数</th><th class="us">はじめの6ヶ月</th><th>7ヶ月目から</th></tr></thead>
+      <thead><tr><th>店舗数</th><th class="us">Step 01<br><small>はじめの6ヶ月</small></th><th>Step 02<br><small>7ヶ月目から</small></th></tr></thead>
       <tbody>
         <tr><th>5店舗まで</th><td class="us">月60万円</td><td>月5万円＋広告予算</td></tr>
         <tr><th>6〜10店舗</th><td class="us">月75万円</td><td>月7万円＋広告予算</td></tr>
@@ -672,17 +680,17 @@ button{font-family:inherit}
         <tr><th>21店舗〜</th><td class="us" colspan="2">個別にお見積もりします</td></tr>
       </tbody>
     </table>
-    <p class="fine">※ 広告予算の中から、運用費（予算の15%・最低 月35,000円）をいただき、残りを広告の配信に使います。広告費の上乗せはありません。<br>※ はじめのご契約は最低3ヶ月です。7ヶ月目からの形に切りかえる時期は、動画のたまり具合を見てご相談します。</p>
+    <p class="fine">※ 広告予算の中から、運用費（予算の15%・最低 月35,000円）をいただき、残りを広告の配信に使います。広告費の上乗せはありません。<br>※ Step 01 のご契約は最低3ヶ月です。Step 02 に切りかえる時期は、動画のたまり具合を見てご相談します。</p>
 
     <div class="price rv">
-      <p class="price__lbl">はじめの6ヶ月に含まれるもの</p>
+      <p class="price__lbl">Step 01 に含まれるもの</p>
       <div class="price__g">
         <div><b>75,000円</b>動画1本あたり</div>
         <div><b>週2本</b>投稿のペース</div>
         <div><b>0円</b>初期費用</div>
       </div>
       <p class="price__inc">アカウントの設計 ・ 企画 ・ 撮影 ・ 編集 ・ 修正（2回まで）・ 投稿 ・ コメント返信 ・ 予約への道づくり</p>
-      <p class="fine"><span class="nw">オプション：インフルエンサー動画</span> <span class="nw">＋35,000円 / 月（税別・はじめの6ヶ月の間）</span><br>インフルエンサーさんへの謝礼が発生する場合は、別途ご相談します。</p>
+      <p class="fine"><span class="nw">オプション：インフルエンサー動画</span> <span class="nw">＋35,000円 / 月（税別・Step 01 の間）</span><br>インフルエンサーさんへの謝礼が発生する場合は、別途ご相談します。</p>
     </div>
 
     <div class="talk rv">
@@ -703,8 +711,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec">
+  <span class="ghost" aria-hidden="true">Flow</span>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">流れ</span><h2>始めるまでの流れ</h2></div>
+    <div class="head rv"><span class="head__en">Flow</span><h2>始めるまでの流れ</h2></div>
     <ol class="fl rv">
       <li><b>無料相談（30分）</b><small>オンラインOK。今の集客をお聞きします。</small></li>
       <li><b>ご契約・ヒアリング</b><small>ヒアリングシートにご記入いただきます。</small></li>
@@ -717,8 +726,9 @@ button{font-family:inherit}
 </section>
 
 <section class="sec sec--2">
+  <span class="ghost" aria-hidden="true">FAQ</span>
   <div class="wrap faq">
-    <div class="head rv"><span class="head__en">よくある質問</span><h2>よくあるご質問</h2></div>
+    <div class="head rv"><span class="head__en">FAQ</span><h2>よくあるご質問</h2></div>
     <div class="rv">
       <details><summary>ホットペッパーなどの掲載は、やめたほうがいいですか？</summary><p>いいえ、今の集客はそのままで始められます。動画の効果が見えてきたら、掲載のプランを見直して、その分をこちらの予算に回すこともできます。</p></details>
       <details><summary>アカウントは店舗ごとですか？</summary><p>基本は店舗ごとに1つです。全店で使える共通の動画と、その店舗だけの動画を組み合わせます。管理を楽にしたい場合は、ブランドで1つにまとめることもできます。</p></details>
@@ -739,7 +749,7 @@ button{font-family:inherit}
 <section class="sec final" id="contact">
   <div class="final__img" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head rv"><span class="head__en">ご相談</span><h2>まずは30分、<br>御社のお話を<span class="nw">聞かせてください。</span></h2><p>無料相談で、この3つがわかります。</p></div>
+    <div class="head rv"><span class="head__en">Contact</span><h2>まずは30分、<br>御社のお話を<span class="nw">聞かせてください。</span></h2><p>無料相談で、この3つがわかります。</p></div>
     <div class="gets rv">
       <div><i>01</i>今の集客で、店舗ごとにもったいないところ</div>
       <div><i>02</i>御社の店舗数で、1年で残る利益</div>
