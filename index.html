@@ -165,6 +165,17 @@
 .intro-movie__btn::after{content:"";position:absolute;left:20px;top:15px;border-style:solid;border-width:11px 0 11px 17px;border-color:transparent transparent transparent #f0e8d8}
 .intro-movie__play:hover .intro-movie__btn{background:rgba(184,137,90,0.9)}
 </style>
+<style>
+/* トップの入口（2026-11-08） */
+.hero-doors{display:grid;gap:12px;max-width:440px}
+.hero-door{display:flex;flex-direction:column;gap:6px;padding:18px 20px;background:rgba(253,248,240,.72);border:1px solid rgba(122,79,46,.28);border-left:3px solid var(--brown);transition:background .3s var(--ease-out),transform .3s var(--ease-out)}
+.hero-door:hover{background:var(--white);transform:translateX(4px)}
+.hero-door__q{font-family:var(--font-serif-jp);font-size:17px;line-height:1.6;color:var(--brown-dark);font-weight:500}
+.hero-door__go{font-size:12px;letter-spacing:.12em;color:var(--brown);display:flex;align-items:center;gap:8px}
+.hero-door__go::after{content:"→";transition:transform .3s var(--ease-out)}
+.hero-door:hover .hero-door__go::after{transform:translateX(4px)}
+.nw{display:inline-block}
+</style>
 </head>
 <body>
 
@@ -209,9 +220,15 @@
         エモーショナルな映像として届け、「売れる仕組み」として機能させる。<br>
         Atreyuは、その両輪を同じチームで回します。
       </p>
-      <div class="hero-cta fade-up delay-3">
-        <a href="marketing.html" class="btn btn--primary">マーケティングを見る</a>
-        <a href="video.html" class="btn btn--ghost">映像制作を見る</a>
+      <div class="hero-doors fade-up delay-3">
+        <a href="video.html" class="hero-door" data-cta-area="hero-door-video">
+          <span class="hero-door__q"><span class="nw">まるで映画のような広告を、</span><span class="nw">つくりたいなら。</span></span>
+          <span class="hero-door__go">映像制作を見る</span>
+        </a>
+        <a href="marketing.html" class="hero-door" data-cta-area="hero-door-marketing">
+          <span class="hero-door__q"><span class="nw">お店にお客さまを、</span><span class="nw">呼びたいなら。</span></span>
+          <span class="hero-door__go">マーケティングを見る</span>
+        </a>
       </div>
     </div>
     <div class="hero-scroll">
