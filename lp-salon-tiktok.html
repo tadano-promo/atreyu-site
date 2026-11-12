@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美容室専門のTikTok運用（関西）｜予約につながる動画づくり｜Atreyu（アトレイユ）</title>
-<meta name="description" content="関西で複数店舗を展開する美容室様向けのTikTok運用。TikTokという新しい入口から、店舗ごとのアカウントで新しいお客さまを増やします。店舗数を入れると、1年で残る利益を計算できます。月額60万円〜（税別）・初期費用0円。">
+<title>美容室専門のTikTok運用｜予約につながる動画づくり｜Atreyu（アトレイユ）</title>
+<meta name="description" content="複数店舗を経営している美容室様向けのTikTok運用。TikTokから、店舗ごとのアカウントで新しいお客さまを増やします。店舗数を入れると、1年で残る利益を計算できます。月額60万円〜（税別）・初期費用0円。">
 <link rel="canonical" href="https://atreyu.jp/lp-salon-tiktok.html">
 <meta name="theme-color" content="#141414">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="美容室専門のTikTok運用（関西）｜予約につながる動画づくり｜Atreyu（アトレイユ）">
-<meta property="og:description" content="TikTokという新しい入口で、全店に、利益を足す。複数店舗の美容室様向けTikTok運用。">
+<meta property="og:title" content="美容室専門のTikTok運用｜予約につながる動画づくり｜Atreyu（アトレイユ）">
+<meta property="og:description" content="複数店舗を経営している美容室様へ。TikTokから新規のお客さまを、初期費用0円で増やします。">
 <meta property="og:url" content="https://atreyu.jp/lp-salon-tiktok.html">
 <meta property="og:site_name" content="Atreyu">
 <meta property="og:locale" content="ja_JP">
@@ -145,6 +145,7 @@ button{font-family:inherit}
 /* service */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .steps div{background:#fff;border-radius:12px;padding:18px 4px 14px;text-align:center;border:2px solid var(--line)}
+.steps .ic{display:block;width:30px;height:30px;margin:0 auto 8px;fill:none;stroke:var(--ac);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .steps i{display:inline-block;font-style:normal;font-family:var(--num);font-weight:600;font-size:13px;color:#fff;background:var(--ac);border-radius:999px;padding:0 9px;margin-bottom:6px}
 .steps b{display:block;font-size:14.5px;font-weight:900;line-height:1.5}
 .steps small{display:block;font-size:10.5px;color:var(--mute);line-height:1.55;margin-top:4px}
@@ -300,6 +301,33 @@ button{font-family:inherit}
 .tbl--tier{margin-top:18px}
 .tbl--tier td{font-size:13px;font-weight:700}
 .tbl--tier tbody th{width:28%}
+
+/* ---- 2026-11-12 direction change: hero + calculator order ---- */
+.hero h1 .h1__to{display:block;width:fit-content;max-width:100%;font-size:14px;font-weight:900;line-height:1.5;color:#fff;background:var(--ac);padding:5px 14px;margin-bottom:16px;text-shadow:none;letter-spacing:.02em}
+.hero__sub{margin-top:18px;font-size:14px;font-weight:700;line-height:1.85;color:rgba(255,255,255,.92)}
+.hero__calc{display:block;width:fit-content;max-width:100%;margin:22px 0 28px;font-size:14px;font-weight:900;line-height:1.5;color:#fff;border:2px solid rgba(255,255,255,.9);border-radius:999px;padding:10px 20px}
+.hero__calc::after{content:' ↓'}
+.calc__q{margin-top:28px}
+.calc__live+.calc__q{margin-top:6px}
+.calc__q i{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-right:8px;border-radius:50%;background:var(--ac);color:#fff;font-family:var(--num);font-style:normal;font-size:15px;font-weight:600;vertical-align:.1em}
+.calc__q small{display:block;margin-top:4px;font-size:12px;font-weight:500;opacity:.7}
+.calc__live{position:sticky;top:62px;z-index:5;display:flex;align-items:baseline;justify-content:center;gap:10px;margin:0 0 14px;padding:8px 12px;background:var(--yl);color:var(--ink);border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.35);transition:opacity .25s}
+.calc__live span{font-size:11px;font-weight:900}
+.calc__live b{font-family:var(--num);font-size:24px;font-weight:600;line-height:1.2}
+.calc__live b small{font-family:var(--sans);font-size:12px;font-weight:900;opacity:1}
+.calc__live>small{font-size:10.5px;font-weight:700}
+.calc__live.off{opacity:0;pointer-events:none}
+.calc__more{margin-top:14px}
+.calc__more summary{cursor:pointer;list-style:none;text-align:center;font-size:13px;font-weight:900;color:var(--yl);padding:8px 0}
+.calc__more summary::-webkit-details-marker{display:none}
+.calc__more summary::after{content:' ＋'}
+.calc__more[open] summary::after{content:' －'}
+.calc__more .calc__in{margin-top:6px}
+.calc__res{margin-top:30px;padding-top:26px;border-top:2px dashed rgba(255,255,255,.3)}
+.calc__resq{width:fit-content;margin:-40px auto 18px;background:var(--yl);color:var(--ink);font-size:12.5px;font-weight:900;padding:3px 16px;transform:skewX(-10deg)}
+.calc__est{margin-top:8px;text-align:center;font-size:12px;font-weight:700;color:var(--yl)}
+.calc__est[hidden]{display:none}
+.calc .fine{margin-top:16px}
 </style>
 <script type="application/ld+json">
 {
@@ -314,7 +342,7 @@ button{font-family:inherit}
   },
   "areaServed": "大阪を中心とした関西",
   "url": "https://atreyu.jp/lp-salon-tiktok.html",
-  "description": "関西で複数店舗を展開する美容室様向けのTikTok運用。店舗ごとのアカウントで、企画・撮影・編集・投稿・コメント返信（投稿から1週間）まで行い、予約ページへつなぎます。",
+  "description": "複数店舗を経営している美容室様向けのTikTok運用。店舗ごとのアカウントで、企画・撮影・編集・投稿・コメント返信（投稿から1週間）まで行い、予約ページへつなぎます。",
   "offers": {
     "@type": "Offer",
     "price": "600000",
@@ -463,65 +491,12 @@ button{font-family:inherit}
 <section class="hero">
   <div class="hero__img" role="img" aria-label="美容室で施術するスタイリスト（イメージ）"></div>
   <div class="hero__in">
-    <p class="hero__tag"><span>複数店舗の美容室様へ</span><span>関西</span><span>TikTok運用</span><span>初期費用0円</span></p>
-    <h1><span class="nw">TikTokという</span><br><span class="nw">新しい入口で、</span><br><span class="nw">全店に、</span><span class="nw"><em>利益</em>を足す。</span></h1>
-    <div class="hcard">
-      <p class="hcard__lbl"><span class="nw">1店舗あたり、</span><span class="nw">新しいお客さまが</span><span class="nw">1日1人ふえると</span></p>
-      <p class="hcard__n"><span>5店舗で</span>＋664<small>万円</small></p>
-      <p class="hcard__sub">1年目に、費用を引いて手元に残る利益（計算例）<br><b>2年目からは、毎年 ＋904万円</b></p>
-      <table class="hcard__tbl">
-        <thead><tr><th>店舗数</th><th>1店舗あたりの<br>月の費用</th><th>1年目に<br>残る利益</th></tr></thead>
-        <tbody>
-          <tr><td>3店舗</td><td>20万円</td><td>＋243万円</td></tr>
-          <tr class="hl"><td>5店舗</td><td>12万円</td><td>＋664万円</td></tr>
-          <tr><td>10店舗</td><td>7.5万円</td><td>＋1,617万円</td></tr>
-          <tr><td>20店舗</td><td>4.5万円</td><td>＋3,618万円</td></tr>
-        </tbody>
-      </table>
-      <p class="hcard__more">店舗が多いほど、1店舗あたりの費用は軽くなります。</p>
-      <a href="#profit" class="hcard__link">自社の数字で計算する</a>
-    </div>
+    <h1><span class="h1__to">複数店舗を経営している美容室様へ</span><span class="nw">TikTokから、</span><span class="nw">新規のお客さまを、</span><span class="nw"><em>初期費用0円</em>で</span><span class="nw">増やします。</span></h1>
+    <p class="hero__sub">企画・撮影・編集・投稿・コメント返信まで、ぜんぶ込み。月額のみのご契約です。</p>
+    <a href="#profit" class="hero__calc">御社だと、いくら残る？ 計算する</a>
     <a href="contact.html" class="btn" data-cta-area="hero">30分の無料相談を申し込む</a>
     <p class="btn-note">オンラインOK ／ ご相談だけでも大丈夫です</p>
-    <p class="fine">※ 客単価7,668円（美容室の平均）・利益率50%・新規の30%が通い続けて年4.3回来店・月25日営業で計算した例です。1店舗あたりの月の費用は、はじめの6ヶ月の月額を店舗数で割った金額です。広告予算は1店舗あたり月3万円で計算しています。写真はイメージです。結果をお約束するものではありません。</p>
-  </div>
-</section>
-
-<section class="sec sec--profit" id="profit">
-  <div class="wrap">
-    <div class="head rv"><span class="head__en">Profit</span><h2>御社の店舗数だと、<br>いくら残る？</h2><p>新しいお客さまの一部は、そのまま通ってくださいます。その1年分の利益から、アトレイユの費用を引いて計算します。</p></div>
-    <div class="calc rv" id="calc">
-      <p class="calc__q">店舗数は？</p>
-      <div class="chips" role="group" aria-label="店舗数" data-for="c-stores">
-        <button type="button" data-n="3">3店舗</button><button type="button" data-n="5" class="on">5店舗</button><button type="button" data-n="10">10店舗</button><button type="button" data-n="20">20店舗</button>
-      </div>
-      <label class="calc__free">それ以外の店舗数<input id="c-stores" type="number" inputmode="numeric" value="5" min="1" max="300"></label>
-      <p class="calc__q" style="margin-top:22px">1店舗で、新しいお客さまが<br>1日に何人ふえたら？</p>
-      <div class="chips chips--3" role="group" aria-label="1日にふえる人数" data-for="c-up">
-        <button type="button" data-n="0.5">0.5人</button><button type="button" data-n="1" class="on">1人</button><button type="button" data-n="2">2人</button>
-      </div>
-      <input id="c-up" type="hidden" value="1">
-
-      <div class="calc__main">1年目に手元に残る利益<small>（アトレイユの費用を引いたあと）</small><b id="o-net">—</b></div>
-      <div class="calc__brk">
-        <div><span>ふえる利益</span><b id="o-gain">—</b></div>
-        <div><span>アトレイユの費用（1年目）</span><b id="o-cost">—</b></div>
-      </div>
-      <div class="calc__y2">2年目からは、毎年<b id="o-net2">—</b></div>
-
-      <p class="calc__set">御社の数字に変えてみてください</p>
-      <div class="calc__in">
-        <label>客単価（円）<input id="c-price" type="number" inputmode="numeric" value="7668" min="0"></label>
-        <label>利益率（%）<input id="c-rate" type="number" inputmode="numeric" value="50" min="1" max="100"></label>
-        <label>通い続ける割合（%）<input id="c-keep" type="number" inputmode="numeric" value="30" min="0" max="100"></label>
-        <label>通う方の年の来店回数<input id="c-visit" type="number" inputmode="decimal" value="4.3" min="1" max="24" step="0.1"></label>
-        <label>月の営業日数<input id="c-days" type="number" inputmode="numeric" value="25" min="1" max="31"></label>
-      </div>
-      <p class="calc__hint">利益率は、材料費や歩合など、お客さまが1人ふえるごとにかかるお金を引いて残る割合です。客単価・通い続けてくれる割合・来店回数の最初の数字は、美容室の平均的な数字です。</p>
-      <div class="calc__ltv"><div>新しいお客さま1人が<br>1年で残す利益<b id="o-ltv">—</b></div><div>元が取れる人数<br>（1店舗・1日あたり）<b id="o-be">—</b></div></div>
-      <p class="fine">※ 1年目の費用は、はじめの6ヶ月（店舗数に合わせた月額）と、7ヶ月目からの6ヶ月（店舗数に合わせた月額＋広告予算 1店舗あたり月3万円）の合計です。2年目は7ヶ月目からの料金だけで計算しています。21店舗以上は個別にお見積もりします（計算は20店舗までの料金で出しています）。<br>※ 1年間にふえたお客さまが、それぞれ1年のあいだ通ってくださった場合の目安です。結果をお約束するものではありません。</p>
-      <a href="contact.html" class="btn btn--light" id="calc-go">この数字で相談する</a>
-    </div>
+    <p class="fine">※ 写真はイメージです。</p>
   </div>
 </section>
 
@@ -564,12 +539,12 @@ button{font-family:inherit}
   <div class="wrap">
     <div class="head rv"><span class="head__en">Service</span><h2>面倒なことは、<br>ぜんぶお任せください。</h2><p>月8本。だいたい週に2本ずつ、サロンの動画が投稿されていきます。</p></div>
     <div class="steps rv">
-      <div><i>01</i><b>企画</b><small>サロンだけの<br>見せ方を考える</small></div>
-      <div><i>02</i><b>撮影</b><small>サロンに伺い<br>1日で撮る</small></div>
-      <div><i>03</i><b>編集</b><small>最初の2秒で<br>手を止める</small></div>
-      <div><i>04</i><b>投稿</b><small>週2本の<br>ペースで</small></div>
-      <div><i>05</i><b>コメント返信</b><small>投稿から<br>1週間</small></div>
-      <div><i>06</i><b>予約への道</b><small>LINEや予約<br>ページへ</small></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><i>01</i><b>企画</b><small>サロンだけの<br>見せ方を考える</small></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.6-2.5h6.8L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg><i>02</i><b>撮影</b><small>サロンに伺い<br>1日で撮る</small></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v14M16 5v14M3 9.5h5M3 14.5h5M16 9.5h5M16 14.5h5"/></svg><i>03</i><b>編集</b><small>最初の2秒で<br>手を止める</small></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3 10.5 13.5"/><path d="M21 3l-6.5 18-4-7.5L3 9.5 21 3z"/></svg><i>04</i><b>投稿</b><small>週2本の<br>ペースで</small></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 10h8M8 13h5"/></svg><i>05</i><b>コメント返信</b><small>投稿から<br>1週間</small></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg><i>06</i><b>予約への道</b><small>LINEや予約<br>ページへ</small></div>
     </div>
     <div class="only rv"><b>1<small>日</small></b><p>サロンにお願いするのは、<br>撮影の日の1日だけです。</p></div>
   </div>
@@ -590,52 +565,6 @@ button{font-family:inherit}
       </tbody>
     </table>
     <p class="fine">※ どちらが合うかは、店舗の場所の近さや、ブランドの考え方によって変わります。無料相談で一緒に決めます。</p>
-  </div>
-</section>
-
-<section class="sec" id="results">
-  <span class="ghost" aria-hidden="true">Results</span>
-  <div class="wrap">
-    <div class="head rv"><span class="head__en">Results</span><h2>1本だけ当たるより、<br>毎回きちんと届くこと。</h2><p>これまで担当してきたアカウントの数字です。</p></div>
-
-    <div class="res rv">
-      <p class="res__who">1店舗運営の美容サロン様</p>
-      <h3>リールの平均再生数が、<span class="nw">1年で約5倍に。</span></h3>
-      <div class="res__big"><b>5</b><span>倍</span></div>
-      <div class="bars">
-        <div class="bar">支援前の1年<div class="bar__row"><div class="bar__t"><div class="bar__f" style="--w:20%"></div></div><span class="bar__v">4,382回</span></div></div>
-        <div class="bar">支援後の1年<div class="bar__row"><div class="bar__t"><div class="bar__f bar__f--on" style="--w:100%"></div></div><span class="bar__v">21,774回</span></div></div>
-      </div>
-      <div class="kpi">
-        <div><b>6<small>倍</small></b>ホームページに<br>来た人</div>
-        <div><b>4<small>倍</small></b>予約ページへ<br>進んだ人</div>
-        <div><b>12<small>本</small></b>1万回を<br>超えたリール</div>
-      </div>
-    </div>
-
-    <div class="res rv">
-      <p class="res__who">飲食店様のアカウント</p>
-      <h3>はじめは約6,500回。<br><span class="nw">いちばん伸びた動画は、</span><span class="nw">339万回。</span></h3>
-      <div class="res__big"><b>339</b><span>万回再生</span></div>
-      <div class="bars">
-        <div class="bar">はじめのころ<div class="bar__row"><div class="bar__t"><div class="bar__f" style="--w:2%"></div></div><span class="bar__v">約6,500回</span></div></div>
-        <div class="bar">いちばん伸びた動画<div class="bar__row"><div class="bar__t"><div class="bar__f bar__f--on" style="--w:100%"></div></div><span class="bar__v">339万回</span></div></div>
-      </div>
-      <div class="kpi kpi--4">
-        <div><b>9.1<small>万</small></b>いいね</div>
-        <div><b>7,347</b>保存</div>
-        <div><b>2,892</b>シェア</div>
-        <div><b>643</b>コメント</div>
-      </div>
-    </div>
-
-    <div class="res rv">
-      <p class="res__who">美容サロン・ネイルサロン・飲食・物販</p>
-      <h3>担当してきたTikTokで、<br><span class="nw">1本あたり</span><span class="nw">2万〜5万回を続けて。</span></h3>
-      <div class="res__big" style="border:0;margin:0;padding:0"><b>2–5</b><span>万回 / 1本</span></div>
-    </div>
-    <p class="fine">※ これまでの実績です。結果をお約束するものではありません。</p>
-    <div style="margin-top:36px" class="rv"><a href="contact.html" class="btn" data-cta-area="results">うちのサロンでも相談する</a></div>
   </div>
 </section>
 
@@ -680,6 +609,105 @@ button{font-family:inherit}
       <div class="r rv"><span class="r__n">02</span><div><h3>テレビCMの現場で、<br>10年つくってきた。</h3><p>テレビCM・WebCMを200本以上手がけてきたプロデューサーが、企画から担当します。最初の2秒で手を止める見せ方を、サロンごとに考えます。</p></div></div>
       <div class="r rv"><span class="r__n">03</span><div><h3>コメント返信まで、<br>ぜんぶ込み。</h3><p>「いいな」を予約に変えるのは、投稿のあとのやりとりです。投稿から1週間、サロンの雰囲気に合わせた言葉で、ていねいに返します。</p></div></div>
     </div>
+  </div>
+</section>
+
+<section class="sec" id="profit">
+  <span class="ghost" aria-hidden="true">Profit</span>
+  <div class="wrap">
+    <div class="head rv"><span class="head__en">Profit</span><h2>御社の店舗数だと、<br>いくら残る？</h2><p>上から順に選ぶだけ。新しいお客さまの一部は、そのまま通ってくださいます。その1年分の利益から、アトレイユの費用を引いて計算します。</p></div>
+    <div class="calc rv" id="calc">
+
+      <div class="calc__live" id="calc-live" aria-live="polite"><span>いまの計算</span><b id="o-live">—</b><small>1年目に残る利益</small></div>
+
+      <p class="calc__q"><i>1</i>店舗数は？</p>
+      <div class="chips chips--3" role="group" aria-label="店舗数" data-for="c-stores">
+        <button type="button" data-n="5">5店舗</button><button type="button" data-n="10" class="on">10店舗</button><button type="button" data-n="20">20店舗以上</button>
+      </div>
+      <label class="calc__free">それ以外の店舗数<input id="c-stores" type="number" inputmode="numeric" value="10" min="1" max="300"></label>
+
+      <p class="calc__q"><i>2</i>1店舗で、新しいお客さまが<br>1日に何人ふえたら？</p>
+      <div class="chips chips--3" role="group" aria-label="1日にふえる人数" data-for="c-up">
+        <button type="button" data-n="0.5">0.5人</button><button type="button" data-n="1" class="on">1人</button><button type="button" data-n="2">2人</button>
+      </div>
+      <input id="c-up" type="hidden" value="1">
+
+      <p class="calc__q"><i>3</i>御社の数字は？<small>（変えられます）</small></p>
+      <div class="calc__in">
+        <label>客単価（円）<input id="c-price" type="number" inputmode="numeric" value="8000" min="0"></label>
+        <label>利益率（%）<input id="c-rate" type="number" inputmode="numeric" value="50" min="1" max="100"></label>
+      </div>
+      <p class="calc__hint">利益率は、材料費や歩合など、お客さまが1人ふえるごとにかかるお金を引いて残る割合です。</p>
+      <details class="calc__more">
+        <summary>くわしい数字を変える</summary>
+        <div class="calc__in">
+          <label>通い続ける割合（%）<input id="c-keep" type="number" inputmode="numeric" value="30" min="0" max="100"></label>
+          <label>通う方の年の来店回数<input id="c-visit" type="number" inputmode="decimal" value="4.3" min="1" max="24" step="0.1"></label>
+          <label>月の営業日数<input id="c-days" type="number" inputmode="numeric" value="25" min="1" max="31"></label>
+        </div>
+        <p class="calc__hint">通い続ける割合・来店回数・営業日数の最初の数字は、美容室の平均的な数字です。</p>
+      </details>
+
+      <div class="calc__res" id="calc-res">
+        <p class="calc__resq">計算結果</p>
+        <div class="calc__main">1年目に手元に残る利益<small>（アトレイユの費用を引いたあと）</small><b id="o-net">—</b></div>
+        <p class="calc__est" id="o-est" hidden></p>
+        <div class="calc__brk">
+          <div><span>ふえる利益</span><b id="o-gain">—</b></div>
+          <div><span>アトレイユの費用（1年目）</span><b id="o-cost">—</b></div>
+        </div>
+        <div class="calc__y2">2年目からは、毎年<b id="o-net2">—</b></div>
+        <div class="calc__ltv"><div>新しいお客さま1人が<br>1年で残す利益<b id="o-ltv">—</b></div><div>元が取れる人数<br>（1店舗・1日あたり）<b id="o-be">—</b></div></div>
+        <p class="fine">※ 1年目の費用は、はじめの6ヶ月（店舗数に合わせた月額）と、7ヶ月目からの6ヶ月（店舗数に合わせた月額＋広告予算 1店舗あたり月3万円）の合計です。2年目は7ヶ月目からの料金だけで計算しています。20店舗以上の結果は目安です（21店舗以上は個別にお見積もりします。計算は20店舗までの料金で出しています）。<br>※ 1年間にふえたお客さまが、それぞれ1年のあいだ通ってくださった場合の目安です。結果をお約束するものではありません。</p>
+        <a href="contact.html" class="btn btn--light" id="calc-go">この数字で相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--2" id="results">
+  <span class="ghost" aria-hidden="true">Results</span>
+  <div class="wrap">
+    <div class="head rv"><span class="head__en">Results</span><h2>1本だけ当たるより、<br>毎回きちんと届くこと。</h2><p>これまで担当してきたアカウントの数字です。</p></div>
+
+    <div class="res rv">
+      <p class="res__who">1店舗運営の美容サロン様</p>
+      <h3>リールの平均再生数が、<span class="nw">1年で約5倍に。</span></h3>
+      <div class="res__big"><b>5</b><span>倍</span></div>
+      <div class="bars">
+        <div class="bar">支援前の1年<div class="bar__row"><div class="bar__t"><div class="bar__f" style="--w:20%"></div></div><span class="bar__v">4,382回</span></div></div>
+        <div class="bar">支援後の1年<div class="bar__row"><div class="bar__t"><div class="bar__f bar__f--on" style="--w:100%"></div></div><span class="bar__v">21,774回</span></div></div>
+      </div>
+      <div class="kpi">
+        <div><b>6<small>倍</small></b>ホームページに<br>来た人</div>
+        <div><b>4<small>倍</small></b>予約ページへ<br>進んだ人</div>
+        <div><b>12<small>本</small></b>1万回を<br>超えたリール</div>
+      </div>
+    </div>
+
+    <div class="res rv">
+      <p class="res__who">飲食店様のアカウント</p>
+      <h3>はじめは約6,500回。<br><span class="nw">いちばん伸びた動画は、</span><span class="nw">339万回。</span></h3>
+      <div class="res__big"><b>339</b><span>万回再生</span></div>
+      <div class="bars">
+        <div class="bar">はじめのころ<div class="bar__row"><div class="bar__t"><div class="bar__f" style="--w:2%"></div></div><span class="bar__v">約6,500回</span></div></div>
+        <div class="bar">いちばん伸びた動画<div class="bar__row"><div class="bar__t"><div class="bar__f bar__f--on" style="--w:100%"></div></div><span class="bar__v">339万回</span></div></div>
+      </div>
+      <div class="kpi kpi--4">
+        <div><b>9.1<small>万</small></b>いいね</div>
+        <div><b>7,347</b>保存</div>
+        <div><b>2,892</b>シェア</div>
+        <div><b>643</b>コメント</div>
+      </div>
+    </div>
+
+    <div class="res rv">
+      <p class="res__who">美容サロン・ネイルサロン・飲食・物販</p>
+      <h3>担当してきたTikTokで、<br><span class="nw">1本あたり</span><span class="nw">2万〜5万回を続けて。</span></h3>
+      <div class="res__big" style="border:0;margin:0;padding:0"><b>2–5</b><span>万回 / 1本</span></div>
+    </div>
+    <p class="fine">※ これまでの実績です。結果をお約束するものではありません。</p>
+    <div style="margin-top:36px" class="rv"><a href="contact.html" class="btn" data-cta-area="results">うちのサロンでも相談する</a></div>
   </div>
 </section>
 
@@ -796,7 +824,7 @@ button{font-family:inherit}
 <footer class="ft">運営：<a href="https://atreyu.jp/">Atreyu（アトレイユ）</a>　|　<a href="policy.html">プライバシーポリシー</a><br>©Atreyu 2026</footer>
 
 <div class="sticky" id="sticky">
-  <p><b>5店舗で、1年目 ＋664万円</b>御社の店舗数で計算できます</p>
+  <p><b>30分の無料相談・オンラインOK</b>御社の数字で、いくら残るかをご案内します</p>
   <a href="contact.html" data-cta-area="sticky">無料相談</a>
 </div>
 
@@ -820,19 +848,31 @@ document.documentElement.classList.add('js');
   function man(n){var x=Math.round(n/10000);return (x>=0?'＋':'−')+Math.abs(x).toLocaleString('ja-JP')+'<small>万円</small>'}
   function tier(n){return n<=5?[600000,50000]:n<=10?[750000,70000]:[900000,100000]}
   var st={};
+  function syncChips(){
+    var s=document.getElementById('c-stores').value, n=parseFloat(s)||0;
+    document.querySelectorAll('[data-for="c-stores"] button').forEach(function(x){
+      var d=parseFloat(x.getAttribute('data-n'));
+      x.classList.toggle('on', d>=20 ? n>=20 : d===n);
+    });
+  }
   function calc(){
     var stores=Math.max(0,v('c-stores')),up=v('c-up'),price=v('c-price'),rate=Math.min(100,v('c-rate'))/100,keep=Math.min(100,v('c-keep'))/100,visit=v('c-visit'),days=Math.min(31,v('c-days'));
     var ltv=price*rate*(keep*visit+(1-keep)*1);
-    if(ltv<=0||days<=0||stores<=0){['o-ltv','o-net','o-gain','o-net2','o-be','o-cost'].forEach(function(k){set(k,'—')});st={};return;}
+    var est=document.getElementById('o-est');
+    if(ltv<=0||days<=0||stores<=0){['o-ltv','o-net','o-gain','o-net2','o-be','o-cost','o-live'].forEach(function(k){set(k,'—')});est.hidden=true;st={};return;}
     var t=tier(stores), ad=30000*stores, COST1=t[0]*6+(t[1]+ad)*6, COST2=(t[1]+ad)*12;
     var gain=stores*up*days*12*ltv, net=gain-COST1, net2=gain-COST2, be=Math.round(COST1/(stores*days*12*ltv)*100)/100;
     set('o-cost','−'+yen(COST1)+'円');
     set('o-net',man(net));set('o-net2',man(net2));set('o-gain','＋'+yen(gain)+'円');
+    set('o-live',man(net));
     set('o-ltv',yen(ltv)+'<small>円</small>');set('o-be','約'+be+'<small>人</small>');
+    if(stores>20){est.textContent='21店舗以上は個別にお見積もりします。この結果は、20店舗の料金で出した目安です。';est.hidden=false;}
+    else if(stores>=20){est.textContent='20店舗以上の結果は目安です。';est.hidden=false;}
+    else{est.hidden=true;}
     st={stores:stores,up:up,price:price,rate:rate,keep:keep,visit:visit,days:days,ltv:ltv,net:net,net2:net2,be:be};
   }
   ['c-stores','c-price','c-rate','c-keep','c-visit','c-days'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){
-    if(id==='c-stores'){document.querySelectorAll('[data-for="c-stores"] button').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-n')===document.getElementById('c-stores').value)})}
+    if(id==='c-stores'){syncChips()}
     calc();})});
   document.querySelectorAll('.chips').forEach(function(g){
     var target=document.getElementById(g.getAttribute('data-for'));
@@ -842,9 +882,15 @@ document.documentElement.classList.add('js');
     })});
   });
   calc();
+  /* the yellow "now" bar follows the page while the numbers are being chosen, and hides when the full result is on screen */
+  (function(){
+    var live=document.getElementById('calc-live'),res=document.getElementById('calc-res');
+    if(!live||!res||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(es){es.forEach(function(e){live.classList.toggle('off',e.isIntersecting&&e.intersectionRatio>0.35)})},{threshold:[0,.35,.7]}).observe(res);
+  })();
   document.getElementById('calc-go').addEventListener('click',function(){
     if(!st.ltv)return;
-    var msg='【美容室LPの計算】店舗数 '+st.stores+'・1店舗で1日にふえる人数 '+st.up+'人・客単価 '+yen(st.price)+'円・利益率 '+Math.round(st.rate*100)+'%・通い続ける割合 '+Math.round(st.keep*100)+'%・年の来店回数 '+st.visit+'回・営業日数 '+st.days+'日 → 1年目に残る利益 約'+Math.round(st.net/10000)+'万円、2年目から毎年 約'+Math.round(st.net2/10000)+'万円の計算でした。';
+    var msg='【美容室LPの計算】店舗数 '+st.stores+'・1店舗で1日にふえる人数 '+st.up+'人・客単価 '+yen(st.price)+'円・利益率 '+Math.round(st.rate*100)+'%・通い続ける割合 '+Math.round(st.keep*100)+'%・年の来店回数 '+st.visit+'回・営業日数 '+st.days+'日 → 1年目に残る利益 約'+Math.round(st.net/10000)+'万円、2年目から毎年 約'+Math.round(st.net2/10000)+'万円の計算でした。'+(st.stores>=20?'（20店舗以上のため目安です）':'');
     try{sessionStorage.setItem('atreyu_prefill',JSON.stringify({cat:'美容室専門 TikTok運用について',msg:msg}));}catch(e){}
   });
 })();
