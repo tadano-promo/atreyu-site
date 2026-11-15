@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
 <meta name="description" content="Atreyuの最新情報・プレスリリース詳細。">
 <title>NEWS｜Atreyu（アトレイユ）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +46,7 @@
       "@type": "ListItem",
       "position": 1,
       "name": "HOME",
-      "item": "https://atreyu.jp/index.html"
+      "item": "https://atreyu.jp/"
     },
     {
       "@type": "ListItem",
@@ -61,7 +62,7 @@
 
 <header class="site-header" id="site-header">
   <nav class="nav-inner">
-    <a href="index.html" class="nav-logo-link">
+    <a href="/" class="nav-logo-link">
       <img src="logo.png" alt="Atreyu" style="height:36px;width:auto;display:block;">
       <span class="nav-brand">Atreyu</span>
     </a>
@@ -70,7 +71,7 @@
     </button>
   </nav>
   <div class="nav-menu" id="nav-menu">
-    <a href="index.html" class="nav-item">HOME</a>
+    <a href="/" class="nav-item">HOME</a>
     <a href="marketing.html" class="nav-item">マーケティング</a>
     <a href="video.html" class="nav-item">映像制作</a>
     <a href="lp-client.html" class="nav-item">Atreyu Family</a>
@@ -129,6 +130,8 @@
   var params = new URLSearchParams(window.location.search);
   var id = params.get('id');
   var item = (window.ATREYU_NEWS || []).find(function (n) { return n.id === id; });
+  // 2026-11-15：記事は /news/<id>.html に移した。前のリンクから来た人はそちらへ
+  if (item) { location.replace('/news/' + encodeURIComponent(item.id) + '.html'); return; }
 
   var titleEl = document.getElementById('nd-title');
   var dateEl  = document.getElementById('nd-date');
